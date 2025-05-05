@@ -1,0 +1,349 @@
+{
+    "current_events": [
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "U.S. President Donald Trump announces a universal 10% tariff on most imports, 20% on EU goods, and 34% on Chinese goods.",
+            "source": "Reuters"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "China increases tariffs on U.S. goods to 84%.",
+            "source": "BBC News"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "Trump raises tariffs on Chinese goods to 125%.",
+            "source": "BBC News"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "Amazon suspends orders on some Chinese/Asian goods amid trade war fears.",
+            "source": "Bloomberg"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "Canada announces a 25% tariff on certain U.S. vehicle imports.",
+            "source": "BBC News"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "EU announces retaliatory duties",
+            "source": "10-25%"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "Russian artillery/glide bombs hit Kherson, Ukraine, killing one, injuring nine.",
+            "source": "AP"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "Large-scale drone attack on Dnipro, Ukraine, kills two, injures 16.",
+            "source": "Reuters"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "Al-Shabaab militants capture Adan Yabal District, Somalia.",
+            "source": "Reuters"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "California sues the Trump administration over tariffs.",
+            "source": "Politico"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "Boat collision on Lewis Smith Lake, Alabama, kills three during a fishing tournament.",
+            "source": "ABC News"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "UK suspends EU cheese/meat imports due to foot-and-mouth disease concerns.",
+            "source": "BBC News"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "Slovak government passes controversial NGO funding disclosure law.",
+            "source": "DW"
+        },
+        {
+            "id": null,
+            "date": "April 21",
+            "description": "James Webb Space Telescope detects dimethyl sulfide",
+            "source": "potential biosignature"
+        },
+        {
+            "id": null,
+            "date": "April 22",
+            "description": "Russian forces target Kharkiv with Geran-2 drones.",
+            "source": "Ukrainska Pravda"
+        },
+        {
+            "id": null,
+            "date": "April 22",
+            "description": "Russian missile strike hits industrial park in Kryvyi Rih, Ukraine.",
+            "source": "Reuters"
+        },
+        {
+            "id": null,
+            "date": "April 22",
+            "description": "Israeli Air Force launches airstrikes in Syria targeting military infrastructure.",
+            "source": "The Times of Israel"
+        },
+        {
+            "id": null,
+            "date": "April 23",
+            "description": "U.S. President Trump announces universal 10% tariff on most imports, 20% on EU goods, and 34% on Chinese goods",
+            "source": "This seems like a duplicate or clarification from April 21st entry, keeping for now"
+        },
+        {
+            "id": null,
+            "date": "May 2",
+            "description": "A Gaza-bound activist aid ship",
+            "source": "Gaza Freedom Flotilla"
+        },
+        {
+            "id": null,
+            "date": "May 2",
+            "description": "_Rust_ movie released theatrically in the US, years after the fatal on-set shooting.",
+            "source": "The New York Times"
+        },
+        {
+            "id": null,
+            "date": "May 2",
+            "description": "Trump administration terminates _de minimis_ tariff exemption; Shein/Temu adjust prices/shipping.",
+            "source": "The New York Times, BBC"
+        },
+        {
+            "id": null,
+            "date": "May 5",
+            "description": "Israeli Security Cabinet confirms plans for indefinite occupation of Gaza.",
+            "source": "The Guardian"
+        },
+        {
+            "id": null,
+            "date": "May 5",
+            "description": "Mass shooting and shootout in Makhachkala, Dagestan, Russia.",
+            "source": "Reuters"
+        },
+        {
+            "id": null,
+            "date": "May 5",
+            "description": "The Vatican announces plans to convert the Popemobile into a mobile health clinic for wounded children in Gaza.",
+            "source": "The Sydney Morning Herald"
+        }
+    ],
+    "music": {
+        "top_songs": [
+            {
+                "rank": 1,
+                "title": "Luther",
+                "artist": "Kendrick Lamar & SZA"
+            },
+            {
+                "rank": 2,
+                "title": "Die With A Smile",
+                "artist": "Lady Gaga & Bruno Mars"
+            },
+            {
+                "rank": 3,
+                "title": "Ordinary",
+                "artist": "Alex Warren"
+            },
+            {
+                "rank": 4,
+                "title": "Nokia",
+                "artist": "Drake"
+            },
+            {
+                "rank": 5,
+                "title": "A Bar Song (Tipsy)",
+                "artist": "Shaboozey"
+            },
+            {
+                "rank": 6,
+                "title": "Pink Pony Club",
+                "artist": "Chappell Roan"
+            },
+            {
+                "rank": 7,
+                "title": "I'm The Problem",
+                "artist": "Morgan Wallen"
+            },
+            {
+                "rank": 8,
+                "title": "I Ain't Coming Back",
+                "artist": "Morgan Wallen & Post Malone"
+            },
+            {
+                "rank": 9,
+                "title": "Lose Control",
+                "artist": "Teddy Swims"
+            },
+            {
+                "rank": 10,
+                "title": "Beautiful Things",
+                "artist": "Benson Boone"
+            },
+            {
+                "rank": 11,
+                "title": "All The Way",
+                "artist": "BigXthaPlug Featuring Bailey Zimmerman"
+            },
+            {
+                "rank": 12,
+                "title": "Anxiety",
+                "artist": "Doechii"
+            },
+            {
+                "rank": 13,
+                "title": "Birds Of A Feather",
+                "artist": "Billie Eilish"
+            },
+            {
+                "rank": 14,
+                "title": "Just In Case",
+                "artist": "Morgan Wallen"
+            },
+            {
+                "rank": 15,
+                "title": "I Had Some Help",
+                "artist": "Post Malone Featuring Morgan Wallen"
+            },
+            {
+                "rank": 16,
+                "title": "APT.",
+                "artist": "ROSE & Bruno Mars"
+            },
+            {
+                "rank": 17,
+                "title": "Love Somebody",
+                "artist": "Morgan Wallen"
+            },
+            {
+                "rank": 18,
+                "title": "Mutt",
+                "artist": "Leon Thomas"
+            },
+            {
+                "rank": 19,
+                "title": "Espresso",
+                "artist": "Sabrina Carpenter"
+            },
+            {
+                "rank": 20,
+                "title": "That's So True",
+                "artist": "Gracie Abrams"
+            }
+        ],
+        "source_name": "Billboard Hot 100",
+        "source_url": "https://www.billboard.com/charts/hot-100/"
+    },
+    "movies": [],
+    "sports": {
+        "categories": {
+            "NFL": [
+                {
+                    "headline": "Washington D.C. named host city for the 2027 NFL Draft.",
+                    "date": "May 5"
+                },
+                {
+                    "headline": "Former Patriots WR Julian Edelman voted into the team's Hall of Fame by fans.",
+                    "date": "May 5"
+                },
+                {
+                    "headline": "Cleveland Browns LB Devin Bush arrested and charged with assault.",
+                    "date": "May 5"
+                },
+                {
+                    "headline": "Buffalo Bills reportedly adding free agent WR Elijah Moore.",
+                    "date": "May 5"
+                },
+                {
+                    "headline": "Green Bay Packers picked up the 5th-year option for DL Devonte Wyatt, declined option for LB Quay Walker.",
+                    "date": "May 5"
+                },
+                {
+                    "headline": "The 2025 NFL Draft took place from April 25-27, with QB Cam Ward selected first overall by the Indianapolis Colts.",
+                    "date": null
+                },
+                {
+                    "headline": "Former agent and business partner of John Elway, Gary Zimmerman, died after a fall.",
+                    "date": "May 3"
+                }
+            ],
+            "NBA": [
+                {
+                    "headline": "The second round of the 2025 NBA Playoffs is underway. Key matchups include Celtics vs. Knicks and Thunder vs. Nuggets.",
+                    "date": "May 5"
+                },
+                {
+                    "headline": "Utah Jazz and Head Coach Will Hardy agreed to a contract extension.",
+                    "date": "May 5"
+                },
+                {
+                    "headline": "Tyrese Haliburton led the Indiana Pacers to a Game 1 victory over the Cleveland Cavaliers in the Eastern Conference Semifinals.",
+                    "date": "May 4"
+                },
+                {
+                    "headline": "The Golden State Warriors defeated the Houston Rockets in Game 7 of their first-round series.",
+                    "date": "May 5"
+                },
+                {
+                    "headline": "The Denver Nuggets defeated the Los Angeles Clippers in Game 7 of their first-round series, setting up a matchup with the Oklahoma City Thunder.",
+                    "date": "May 3"
+                },
+                {
+                    "headline": "Gregg Popovich announced his retirement as head coach of the San Antonio Spurs; Mitch Johnson named successor.",
+                    "date": "May 3"
+                }
+            ],
+            "MLB": [
+                {
+                    "headline": "Arizona Diamondbacks unveiled new City Connect uniforms.",
+                    "date": "May 5"
+                },
+                {
+                    "headline": "Kansas City Royals set a club record by hitting seven home runs in a game against the Baltimore Orioles. Maikel Garcia hit two.",
+                    "date": "May 4"
+                },
+                {
+                    "headline": "Boston Red Sox 1B Triston Casas confirmed out for the season after knee surgery.",
+                    "date": "May 5"
+                },
+                {
+                    "headline": "Shohei Ohtani and Freddie Freeman homered as the Los Angeles Dodgers defeated the Atlanta Braves. Roki Sasaki earned his first MLB win.",
+                    "date": "May 5"
+                },
+                {
+                    "headline": "Chicago Cubs rookie Pete Crow-Armstrong homered for the third time in two games.",
+                    "date": "May 3"
+                },
+                {
+                    "headline": "Los Angeles Angels star Mike Trout placed on the Injured List with a bone bruise.",
+                    "date": "May 2"
+                },
+                {
+                    "headline": "Cincinnati Reds pitcher Hunter Greene struck out 12 batters against the Washington Nationals.",
+                    "date": "May 2"
+                },
+                {
+                    "headline": "San Diego Padres star Fernando Tatis Jr. left a game after being hit by a pitch; X-rays were negative.",
+                    "date": "May 2"
+                }
+            ]
+        }
+    }
+}
