@@ -145,7 +145,7 @@ def fetch_quiz_questions_from_api():
             session["seen_in_batch_questions"] = []
             return jsonify({"success": True, "message": f"{len(processed_questions)} questions fetched successfully.", "count": len(processed_questions)})
         else:
-            error_message = f"OpenTDB API Error (Code: {data.get("response_code")}): "
+            error_message = f"OpenTDB API Error (Code: {data.get('response_code')}): "
             if data.get("response_code") == 1: error_message += "Not enough questions for your query."
             elif data.get("response_code") == 2: error_message += "Invalid API parameter."
             elif data.get("response_code") == 5: error_message += "Rate limit exceeded. Please wait ~5 seconds."
