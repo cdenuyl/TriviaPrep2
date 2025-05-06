@@ -288,7 +288,9 @@ def get_geo_question():
     # OpenTDB questions don't have images by default
     question["image_url"] = None 
         
-    return jsonify(question)if __name__ == "__main__":
+    return jsonify(question)
+
+if __name__ == "__main__":
     # Make sure to run on 0.0.0.0 to be accessible externally
     app.run(host="0.0.0.0", port=5000, debug=True) 
 
