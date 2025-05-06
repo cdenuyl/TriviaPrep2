@@ -183,6 +183,21 @@ if __name__ == "__main__":
 
     sports_data = process_simple_data(os.path.join(static_dir, "sports_news.txt"), os.path.join(static_dir, "sports_news.json"), "sports")
     if sports_data: combined_data.update(sports_data)
+
+    hockey_data = process_simple_data(os.path.join(static_dir, "hockey_news.txt"), os.path.join(static_dir, "hockey_news.json"), "hockey_news")
+    if hockey_data: combined_data.update(hockey_data)
+
+    baseball_data = process_simple_data(os.path.join(static_dir, "baseball_news.txt"), os.path.join(static_dir, "baseball_news.json"), "baseball_news")
+    if baseball_data: combined_data.update(baseball_data)
+
+    tennis_data = process_simple_data(os.path.join(static_dir, "tennis_news.txt"), os.path.join(static_dir, "tennis_news.json"), "tennis_news")
+    if tennis_data: combined_data.update(tennis_data)
+
+    golf_data = process_simple_data(os.path.join(static_dir, "golf_news.txt"), os.path.join(static_dir, "golf_news.json"), "golf_news")
+    if golf_data: combined_data.update(golf_data)
+
+    tv_show_data = process_simple_data(os.path.join(static_dir, "tv_show_data.txt"), os.path.join(static_dir, "tv_show_data.json"), "tv_shows")
+    if tv_show_data: combined_data.update(tv_show_data)
         
     combined_output_file = os.path.join(static_dir, "trivia_data.json")
     try:

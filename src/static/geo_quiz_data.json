@@ -48,6 +48,103 @@
     "question": "What is the largest ocean on Earth?",
     "options": ["Atlantic", "Indian", "Arctic", "Pacific"],
     "answer": "Pacific"
+  },
+  {
+    "id": 8,
+    "type": "image",
+    "question": "Identify this famous landmark.",
+    "image": "images/eiffel_tower.jpg",
+    "options": ["Statue of Liberty", "Eiffel Tower", "Colosseum", "Big Ben"],
+    "answer": "Eiffel Tower"
+  },
+  {
+    "id": 9,
+    "type": "text",
+    "question": "Which country is known as the Land of the Rising Sun?",
+    "options": ["China", "South Korea", "Japan", "Thailand"],
+    "answer": "Japan"
+  },
+  {
+    "id": 10,
+    "type": "map",
+    "question": "Which continent is highlighted on this map?",
+    "image": "images/africa_outline.png",
+    "options": ["Asia", "Africa", "South America", "Europe"],
+    "answer": "Africa"
+  },
+  {
+    "id": 11,
+    "type": "text",
+    "question": "What is the capital of Australia?",
+    "options": ["Sydney", "Melbourne", "Canberra", "Perth"],
+    "answer": "Canberra"
+  },
+  {
+    "id": 12,
+    "type": "image",
+    "question": "Name this famous Egyptian structure.",
+    "image": "images/pyramids_of_giza.jpg",
+    "options": ["Sphinx", "Luxor Temple", "Pyramids of Giza", "Karnak Temple"],
+    "answer": "Pyramids of Giza"
+  },
+  {
+    "id": 13,
+    "type": "text",
+    "question": "Which is the largest country by land area?",
+    "options": ["Canada", "USA", "China", "Russia"],
+    "answer": "Russia"
+  },
+  {
+    "id": 14,
+    "type": "text",
+    "question": "What is the capital of Canada?",
+    "options": ["Toronto", "Vancouver", "Montreal", "Ottawa"],
+    "answer": "Ottawa"
+  },
+  {
+    "id": 15,
+    "type": "image",
+    "question": "Identify this famous landmark in India.",
+    "image": "images/taj_mahal.jpg",
+    "options": ["Red Fort", "Taj Mahal", "Qutub Minar", "Lotus Temple"],
+    "answer": "Taj Mahal"
+  },
+  {
+    "id": 16,
+    "type": "text",
+    "question": "Which U.S. state is known as the Sunshine State?",
+    "options": ["California", "Florida", "Arizona", "Hawaii"],
+    "answer": "Florida"
+  },
+  {
+    "id": 17,
+    "type": "text",
+    "question": "What is the capital of the United Kingdom?",
+    "options": ["Manchester", "Birmingham", "Liverpool", "London"],
+    "answer": "London"
+  },
+  {
+    "id": 18,
+    "type": "map",
+    "question": "Identify the U.S. state highlighted on the map.",
+    "image": "images/texas_outline.png",
+    "options": ["California", "Texas", "Florida", "New York"],
+    "answer": "Texas"
+  },
+  {
+    "id": 19,
+    "type": "text",
+    "question": "Which country is home to the Great Barrier Reef?",
+    "options": ["New Zealand", "Indonesia", "Australia", "Philippines"],
+    "answer": "Australia"
+  },
+  {
+    "id": 20,
+    "type": "image",
+    "question": "What is the name of this famous Brazilian statue?",
+    "image": "images/christ_the_redeemer.jpg",
+    "options": ["Christ the Redeemer", "Statue of Liberty", "The Motherland Calls", "David"],
+    "answer": "Christ the Redeemer"
   }
 ]
 

@@ -1,31 +1,35 @@
-# Trivia Prep Web App - ToDo List
+# Trivia Prep App - Task Checklist
 
-- [X] 001: Clarify user requirements (Done)
-- [X] 002: Select webapp template (Flask) and set up project structure (Done)
-- [ ] 003: Gather and process trivia data
-    - [X] 003a: Gather current events (past 2 weeks, 15-20 items)
-    - [X] 003b: Gather top music/singers/albums
-    - [X] 003c: Gather top movies (summary, stars)
-    - [X] 003d: Gather notable sports news (past 2 weeks)
-    - [X] 003e: Process gathered data into usable format (e.g., JSON)
-- [X] 004: Design and implement webapp interface
-    - [X] 004a: Create basic Flask routes and HTML templates
-    - [X] 004b: Display gathered data (events, music, movies, sports)
-    - [X] 004c: Design basic layout/styling
-- [ ] 005: Integrate category search and geography quiz
-    - [X] 005a: Implement dynamic category search backend logic (placeholder)
-    - [X] 005b: Implement category search frontend interface
-    - [X] 005c: Design geography quiz data structure/source (sample data created)
-    - [X] 005d: Implement geography quiz backend logic (question generation, map/image display, multiple choice)
-    - [X] 005e: Implement geography quiz frontend interface
-- [X] 006: Implement weekly refresh mechanism (Manual Update Button)
-    - [X] 006a: Create script/function to re-gather data (placeholder implemented)
-    - [X] 006b: Implement manual update button in UI and backend hook
-- [X] 007: Validate features and data accuracy (Local validation complete)
-    - [X] 007a: Test data display and updates (Local OK)
-    - [X] 007b: Test category search functionality (Local OK)
-    - [X] 007c: Test geography quiz functionality (Local OK)
-    - [X] 007d: Test weekly refresh mechanism (Manual button tested locally)
-- [X] 008: Report and send access to user
-    - [X] 008a: Provide instructions for local running (README.md created)
-    - [X] 008b: Send final report and access details to user (Preparing message)
+## Phase 1: Initial Setup and Core Features (Completed in Original Task)
+
+- [X] Create Flask application structure.
+- [X] Implement basic data processing for current events, music, movies, sports.
+- [X] Create initial HTML template to display data.
+- [X] Implement basic category search (placeholder).
+- [X] Implement basic geography quiz (small dataset, potential image issues).
+- [X] Package application for Render deployment.
+
+## Phase 2: Enhancements and Fixes (Current Task)
+
+- **Data Content Expansion & Refinement:**
+    - [X] Movies: Expand displayed movies from ~4 to the top 10.
+    - [X] TV Shows: Add a new section for current top TV shows, including summaries and actors.
+    - [X] Sports: Broaden sports news coverage to include more sports (e.g., Hockey, Baseball, Tennis, Golf).
+
+- **User Interface and Experience:**
+    - [X] Sports Section: Redesign the sports section layout to more clearly separate news by sport.
+    - [X] Geography Quiz - Images: Resolve issues with images not displaying in the geography quiz.
+    - [X] Geography Quiz - Content: Significantly increase the number of questions in the geography quiz (aim for a much larger and diverse dataset - currently 10 questions with images and varied types).
+    - [X] Geography Quiz - Logic: Ensure geography quiz questions are presented randomly and do not repeat until all unique questions in the current pool have been shown (session-based non-repeating logic).
+    - [X] Category Search: Improve the category search feature to provide actual, dynamic search results (e.g., top 10-20 web results) instead of placeholder messages or "could not find" errors.
+
+- **Backend and Deployment:**
+    - [X] Resolve any deployment errors (e.g., missing dependencies like `requests`, `beautifulsoup4`).
+    - [X] Ensure all new data sources are correctly processed and displayed.
+    - [X] Update `requirements.txt` with any new dependencies.
+
+- **Finalization:**
+    - [X] Validate all new features and fixes thoroughly.
+    - [X] Prepare a comprehensive summary of changes for the user.
+    - [X] Package the updated application (source code and necessary static files) for the user to deploy.
+

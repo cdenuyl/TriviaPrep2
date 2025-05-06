@@ -4,12 +4,14 @@ import json
 import random
 import requests
 from bs4 import BeautifulSoup
-from flask import Flask, render_template, jsonify, request, url_for
+import urllib.parse
+from flask import Flask, render_template, jsonify, request, url_for, session
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 # Corrected Flask app initialization
 app = Flask(__name__, static_folder="static", template_folder="./")
+app.secret_key = os.urandom(24) # Needed for session management
 
 DATA_FILE = os.path.join(app.static_folder, "trivia_data.json")
 GEO_QUIZ_FILE = os.path.join(app.static_folder, "geo_quiz_data.json")
@@ -37,16 +39,25 @@ def index():
     events = trivia_data.get("events", [])
     movies = trivia_data.get("movies", [])
     music = trivia_data.get("music", [])
-    sports = trivia_data.get("sports", [])
+    # sports = trivia_data.get("sports", []) # Old generic sports
     movie_source_info = trivia_data.get("movie_source_info", "Unknown Date")
+    tv_shows = trivia_data.get("tv_shows", [])
+    hockey_news = trivia_data.get("hockey_news", [])
+    baseball_news = trivia_data.get("baseball_news", [])
+    tennis_news = trivia_data.get("tennis_news", [])
+    golf_news = trivia_data.get("golf_news", [])
     
     return render_template("index.html", 
                            events=events, 
                            movies=movies, 
                            music=music, 
-                           sports=sports,
-                           movie_source_info=movie_source_info)
-
+                           # sports=sports, # Old generic sports
+                           movie_source_info=movie_source_info,
+                           tv_shows=tv_shows,
+                           hockey_news=hockey_news,
+                           baseball_news=baseball_news,
+                           tennis_news=tennis_news,
+                           golf_news=golf_news)
 @app.route("/update_data", methods=["POST"])
 def update_data():
     """Triggers the data processing script (currently re-processes static files)."""
@@ -83,84 +94,145 @@ def search_category():
     if not query:
         return jsonify({"error": "Query parameter is missing"}), 400
 
-    search_query = f"trivia questions about {query}"
-    # Corrected line: Use single quotes inside the f-string's replace method
-    search_url = f"https://www.google.com/search?q={search_query.replace(' ', '+')}"
+    # Make the search query more specific for trivia questions
+    search_query = f"trivia questions and answers about {query}"
+    encoded_query = urllib.parse.quote_plus(search_query)
+    search_url = f"https://www.google.com/search?q={encoded_query}&num=20"  # Request more results
+    
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
     }
 
     results = []
     try:
-        response = requests.get(search_url, headers=headers)
-        response.raise_for_status()  # Raise an exception for bad status codes
+        print(f"Fetching search results from: {search_url}")
+        response = requests.get(search_url, headers=headers, timeout=10)
+        response.raise_for_status()
+        print(f"Search response status: {response.status_code}")
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # Try to find search result descriptions (this is fragile and might break)
-        # Google often uses divs with specific classes, but these change.
-        
-        # Example 1: Look for divs that might contain result snippets (Class names are examples and change frequently)
-        potential_snippet_classes = ["BNeawe", "s3v9rd", "AP7Wnd"] # Common classes, but unreliable
-        for class_name in potential_snippet_classes:
-             snippets = soup.find_all("div", class_=class_name)
-             for snippet in snippets:
-                 text = snippet.get_text(separator=" ", strip=True)
-                 if text and len(text) > 20 and "?" in text: # Basic filter for question-like text
-                     # Avoid adding duplicates
-                     if text not in results:
-                         results.append(text)
-                         if len(results) >= 15:
-                             break
-             if len(results) >= 15:
-                 break       
-        
-        # Example 2: Fallback - Look for text in paragraph tags if few results found
-        if len(results) < 10:
-             paragraphs = soup.find_all("p")
-             for p in paragraphs:
-                 text = p.get_text(strip=True)
-                 # Basic filtering for relevance (very crude)
-                 if query.lower() in text.lower() and "?" in text and len(text) > 20:
-                     # Avoid adding duplicates
-                     if text not in results:
-                         results.append(text)
-                         if len(results) >= 15:
-                             break
+        # Google's structure changes, so this needs to be adaptable.
+        # Common patterns for search result blocks:
+        # Older: div class="g", div class="srg"
+        # Newer: div with data-hveid attribute, or complex nested structures.
+        # We'll try a few common selectors for the main result items.
+        # This is still fragile and a more robust solution might involve a search API.
 
-        # If still no results, return a message
-        if not results:
-            results.append(f"Could not find trivia questions for '{query}'. Try a different category.")
+        # Attempt 1: Find divs that often contain individual search results.
+        # Look for divs that seem to encapsulate a single search result.
+        # Common classes (these can change!): "g", "Gx5Zad", "rc", "kvgmc"
+        # For simplicity, let's try a broader approach first, then refine if needed.
         
-        # Limit to 15 results
-        results = results[:15]
+        # Let's look for common containers for search results
+        # This selector might need adjustment if Google changes its layout.
+        # It targets divs that are likely to be individual search result containers.
+        result_blocks = soup.find_all("div", class_=lambda x: x and ("g " in x or "Gx5Zad" in x or "rc" in x or "kvgmc" in x or "V7sr0" in x or "sVXRqc" in x)) 
+        if not result_blocks:
+            # Fallback to a more generic div if specific classes fail
+            result_blocks = soup.find_all("div", class_="g") # A very common old class
+
+        print(f"Found {len(result_blocks)} potential result blocks.")
+
+        for block in result_blocks:
+            title_tag = block.find("h3")
+            title = title_tag.get_text(strip=True) if title_tag else None
+            
+            # Snippet can be in various places, often a div following the title's parent link
+            # Trying to find a div that contains descriptive text
+            snippet_tag = None
+            # Common snippet class names (also change often): "VwiC3b", "s3v9rd", "st", "IsZvec"
+            possible_snippet_parents = block.find_all("div", class_=lambda x: x and ("VwiC3b" in x or "s3v9rd" in x or "IsZvec" in x or "MUxGbd" in x))
+            if possible_snippet_parents:
+                for psp in possible_snippet_parents:
+                    # Check if this div is not a parent of another result block
+                    if not psp.find("div", class_=lambda x: x and ("g " in x or "Gx5Zad" in x or "rc" in x or "kvgmc" in x or "V7sr0" in x or "sVXRqc" in x)):
+                        snippet_text_candidate = psp.get_text(separator=" ", strip=True)
+                        if snippet_text_candidate and len(snippet_text_candidate) > 20:
+                            snippet_tag = psp # Use the first good one
+                            break
+            
+            snippet = snippet_tag.get_text(separator=" ", strip=True) if snippet_tag else None
+
+            if snippet and "?" in snippet and len(snippet) > 25: # Prioritize snippets that look like questions
+                if snippet not in results:
+                    results.append(snippet)
+            elif title and snippet and len(snippet) > 25: # Combine title and snippet if snippet is substantial
+                combined = f"{title}: {snippet}"
+                if combined not in results:
+                    results.append(combined)
+            elif title and "?" in title: # If title itself is a question
+                 if title not in results:
+                    results.append(title)
+
+            if len(results) >= 20: # Aim for up to 20 results
+                break
+        
+        # If very few results, try a broader text search within the page for question marks
+        if len(results) < 5:
+            print("Few results from structured search, trying broader text search.")
+            all_text = soup.get_text(separator="\n", strip=True)
+            potential_questions = []
+            for line in all_text.split("\n"):
+                line = line.strip()
+                if "?" in line and len(line) > 20 and len(line) < 300: # Filter for question-like lines
+                    # Avoid common non-trivia questions
+                    if not any(phrase in line.lower() for phrase in ["what is", "how to", "can i", "where is", "sign in", "privacy", "terms"]):
+                        potential_questions.append(line)
+            
+            for pq in potential_questions:
+                if pq not in results:
+                    results.append(pq)
+                    if len(results) >= 20:
+                        break
+
+        if not results:
+            results.append(f"Could not find enough relevant trivia questions for \'{query}\'. Try a different or more specific category.")
+        
+        print(f"Final number of results for query \'{query}\': {len(results)}")
+        results = results[:20] # Ensure max 20 results
 
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching search results: {e}")
+        print(f"Error fetching search results for \'{query}\': {e}")
         return jsonify({"error": f"Failed to fetch search results: {e}"}), 500
     except Exception as e:
-        print(f"Error parsing search results: {e}")
+        print(f"Error parsing search results for \'{query}\': {e}")
         return jsonify({"error": f"Failed to parse search results: {e}"}), 500
 
     return jsonify(results)
-
 @app.route("/geo_quiz/question", methods=["GET"])
 def get_geo_question():
-    """Gets a random geography quiz question."""
+    """Gets a random geography quiz question, ensuring no repeats until all are shown."""
     geo_data = load_data(GEO_QUIZ_FILE)
-    if not geo_data or not isinstance(geo_data, list):
-        return jsonify({"error": "Could not load geography quiz data."}), 500
+    if not geo_data or not isinstance(geo_data, list) or not geo_data:
+        return jsonify({"error": "Could not load or parse geography quiz data, or data is empty."}), 500
+
+    seen_questions_ids = session.get("seen_geo_questions", [])
     
-    question = random.choice(geo_data)
+    available_questions = [q for q in geo_data if q.get("id") not in seen_questions_ids]
+
+    if not available_questions:
+        # All questions have been seen, reset the list for the new cycle
+        session["seen_geo_questions"] = []
+        available_questions = geo_data
+        seen_questions_ids = [] # Reset for current selection
+
+    if not available_questions: # Should not happen if geo_data is not empty initially
+        return jsonify({"error": "No available questions to choose from, even after reset."}), 500
+
+    question = random.choice(available_questions)
+    
+    # Add current question to seen list for this session
+    seen_questions_ids.append(question.get("id"))
+    session["seen_geo_questions"] = seen_questions_ids
+
     # Ensure image path is correct for web access
     if "image" in question and question["image"]:
-        # Assuming image path is relative to static folder, e.g., "images/world_map_outline.png"
         question["image_url"] = url_for("static", filename=question["image"])
     else:
         question["image_url"] = None
         
     return jsonify(question)
-
 if __name__ == "__main__":
     # Make sure to run on 0.0.0.0 to be accessible externally
     app.run(host="0.0.0.0", port=5000, debug=True) 

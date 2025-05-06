@@ -126,18 +126,78 @@
             {% endif %}
         </section>
 
-        <!-- Sports -->
-        <section id="sports">
-            <h2>Notable Sports News (Last 2 Weeks)</h2>
-            {% if sports %}
+        <!-- TV Shows -->
+        <section id="tv-shows">
+            <h2>Top TV Shows</h2>
+            {% if tv_shows %}
                 <ul>
-                    {% for item in sports %}
+                    {% for item in tv_shows %}
                         <li>{{ item }}</li>
                     {% endfor %}
                 </ul>
-                 {# Add source info if available in future data structure #}
             {% else %}
-                <p>No sports news available.</p>
+                <p>No TV show data available.</p>
+            {% endif %}
+        </section>
+
+        <!-- Sports -->
+        <section id="sports-news-container">
+            <h2>Notable Sports News (Last 2 Weeks)</h2>
+            
+            <section id="hockey-news" class="sport-category">
+                <h3>Hockey News (NHL)</h3>
+                {% if hockey_news %}
+                    <ul>
+                        {% for item in hockey_news %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No hockey news available.</p>
+                {% endif %}
+            </section>
+
+            <section id="baseball-news" class="sport-category">
+                <h3>Baseball News (MLB)</h3>
+                {% if baseball_news %}
+                    <ul>
+                        {% for item in baseball_news %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No baseball news available.</p>
+                {% endif %}
+            </section>
+
+            <section id="tennis-news" class="sport-category">
+                <h3>Tennis News</h3>
+                {% if tennis_news %}
+                    <ul>
+                        {% for item in tennis_news %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No tennis news available.</p>
+                {% endif %}
+            </section>
+
+            <section id="golf-news" class="sport-category">
+                <h3>Golf News (PGA)</h3>
+                {% if golf_news %}
+                    <ul>
+                        {% for item in golf_news %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No golf news available.</p>
+                {% endif %}
+            </section>
+            
+            {% if not hockey_news and not baseball_news and not tennis_news and not golf_news %}
+                 <p>No sports news available at the moment.</p>
             {% endif %}
         </section>
 
