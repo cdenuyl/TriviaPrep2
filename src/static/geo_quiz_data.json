@@ -1,59 +1,53 @@
 [
   {
     "id": 1,
-    "type": "map_identification",
+    "type": "map",
     "question": "Identify the country highlighted on the map.",
-    "image": "static/images/placeholder_map.png", 
-    "options": ["Canada", "Mexico", "Brazil", "United States"],
-    "correct_answer": "United States"
+    "image": "images/world_map_outline.svg+xml", 
+    "options": ["Brazil", "Canada", "Australia", "Russia"],
+    "answer": "Canada"
   },
   {
     "id": 2,
-    "type": "landmark_identification",
-    "question": "What is the name of this landmark?",
-    "image": "static/images/placeholder_landmark.jpg", 
-    "options": ["Eiffel Tower", "Statue of Liberty", "Great Wall of China", "Colosseum"],
-    "correct_answer": "Eiffel Tower"
+    "type": "text",
+    "question": "What is the longest river in the world?",
+    "options": ["Amazon", "Nile", "Mississippi", "Yangtze"],
+    "answer": "Nile"
   },
   {
     "id": 3,
-    "type": "capital_city",
-    "question": "What is the capital of Japan?",
-    "image": null,
-    "options": ["Beijing", "Seoul", "Tokyo", "Bangkok"],
-    "correct_answer": "Tokyo"
+    "type": "text",
+    "question": "Which mountain range is Mount Everest part of?",
+    "options": ["Andes", "Rockies", "Himalayas", "Alps"],
+    "answer": "Himalayas"
   },
   {
     "id": 4,
-    "type": "river_location",
-    "question": "Which river is the longest in the world?",
-    "image": null,
-    "options": ["Amazon", "Nile", "Mississippi", "Yangtze"],
-    "correct_answer": "Nile"
+    "type": "text",
+    "question": "What is the capital of Japan?",
+    "options": ["Kyoto", "Osaka", "Tokyo", "Hiroshima"],
+    "answer": "Tokyo"
   },
-  {
+   {
     "id": 5,
-    "type": "mountain_range",
-    "question": "Mount Everest is part of which mountain range?",
-    "image": null,
-    "options": ["Andes", "Rockies", "Alps", "Himalayas"],
-    "correct_answer": "Himalayas"
+    "type": "text",
+    "question": "Which desert is the largest hot desert in the world?",
+    "options": ["Gobi", "Kalahari", "Arabian", "Sahara"],
+    "answer": "Sahara"
   },
   {
     "id": 6,
-    "type": "country_continent",
-    "question": "Which continent is Egypt located in?",
-    "image": null,
-    "options": ["Asia", "Africa", "Europe", "South America"],
-    "correct_answer": "Africa"
+    "type": "text",
+    "question": "In which country would you find the landmark Machu Picchu?",
+    "options": ["Chile", "Peru", "Bolivia", "Ecuador"],
+    "answer": "Peru"
   },
-   {
+  {
     "id": 7,
-    "type": "city_country",
-    "question": "In which country is the city of Sydney located?",
-    "image": null,
-    "options": ["New Zealand", "United Kingdom", "Australia", "Canada"],
-    "correct_answer": "Australia"
+    "type": "text",
+    "question": "What is the largest ocean on Earth?",
+    "options": ["Atlantic", "Indian", "Arctic", "Pacific"],
+    "answer": "Pacific"
   }
 ]
 

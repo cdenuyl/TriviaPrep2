@@ -48,6 +48,14 @@
             font-style: italic;
             color: #555;
         }
+        .movie-item, #current-events li, #music li, #sports li {
+            margin-bottom: 15px; /* Add space between items */
+            padding-bottom: 10px; /* Add padding below items */
+            border-bottom: 1px solid #eee; /* Add a light separator */
+        }
+        .movie-item:last-child, #current-events li:last-child, #music li:last-child, #sports li:last-child {
+            border-bottom: none; /* Remove border for the last item */
+        }
     </style>
 </head>
 <body>
@@ -59,19 +67,22 @@
     </header>
 
     <main>
-        <!-- Existing Sections: Current Events, Music, Movies, Sports -->
+        <!-- Current Events -->
         <section id="current-events">
             <h2>Current Events (Last 2 Weeks)</h2>
-            {% if current_events %}
+            {% if events %}
                 <ul>
-                    {% for event in current_events %}
+                    {% for event in events %}
                         <li>
-                            {% if event.date %}
-                                <strong>{{ event.date }}:</strong> 
+                            <strong>{{ event.headline }}</strong>
+                            {% if event.url %}
+                                <a href="{{ event.url }}" target="_blank">(Source)</a>
                             {% endif %}
-                            {{ event.description }}
-                            {% if event.source %}
-                                <span class="source">(Source: {{ event.source }})</span>
+                            {% if event.summary %}
+                                <p>{{ event.summary }}</p>
+                            {% endif %}
+                            {% if event.date %}
+                                <span class="date">({{ event.date }})</span>
                             {% endif %}
                         </li>
                     {% endfor %}
@@ -81,67 +92,50 @@
             {% endif %}
         </section>
 
+        <!-- Music -->
         <section id="music">
             <h2>Top Music</h2>
-            {% if music and music.top_songs %}
-                <h3>Top {{ music.top_songs|length }} Songs ({{ music.source_name }})</h3>
-                <ol>
-                    {% for song in music.top_songs %}
-                        <li>{{ song.title }} - {{ song.artist }}</li>
+            {% if music %}
+                <ul>
+                    {% for item in music %}
+                        <li>{{ item }}</li>
                     {% endfor %}
-                </ol>
-                 {% if music.source_url %}
-                     <p><a href="{{ music.source_url }}" target="_blank">Source Link</a></p>
-                 {% endif %}
+                </ul>
+                {# Add source info if available in future data structure #}
             {% else %}
                 <p>No music data available.</p>
             {% endif %}
         </section>
 
+        <!-- Movies -->
         <section id="movies">
-            <h2>Top Movies (Box Office)</h2>
+            <h2>Top Movies (Box Office - {{ movie_source_info }})</h2>
             {% if movies %}
-                 {% if movies and movies[0].source_name %}
-                     <p>Source: {{ movies[0].source_name }}</p>
-                 {% endif %}
                 {% for movie in movies %}
                     <article class="movie-item">
                         <h3>{{ movie.rank }}. {{ movie.title }}</h3>
                         <p><strong>Weekend Gross:</strong> {{ movie.weekend_gross }} | <strong>Total Gross:</strong> {{ movie.total_gross }}</p>
                         <p><strong>Summary:</strong> {{ movie.summary }}</p>
-                        <p><strong>Stars:</strong> {{ movie.stars|join(", ") }}</p>
+                        {# Corrected Stars display - remove |join filter #}
+                        <p><strong>Stars:</strong> {{ movie.stars }}</p> 
                     </article>
                 {% endfor %}
-                 {% if movies and movies[0].source_url %}
-                     <p><a href="{{ movies[0].source_url }}" target="_blank">Source Link</a></p>
-                 {% endif %}
+                 {# Add source link if available in future data structure #}
             {% else %}
                 <p>No movie data available.</p>
             {% endif %}
         </section>
 
+        <!-- Sports -->
         <section id="sports">
             <h2>Notable Sports News (Last 2 Weeks)</h2>
-            {% if sports and sports.categories %}
-                 {% if sports.source_name %}
-                     <p>Source: {{ sports.source_name }}</p>
-                 {% endif %}
-                {% for category, news_items in sports.categories.items() %}
-                    <h3>{{ category }}</h3>
-                    <ul>
-                        {% for item in news_items %}
-                            <li>
-                                {{ item.headline }}
-                                {% if item.date %}
-                                    <span class="date">({{ item.date }})</span>
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endfor %}
-                 {% if sports.source_url %}
-                     <p><a href="{{ sports.source_url }}" target="_blank">Source Link</a></p>
-                 {% endif %}
+            {% if sports %}
+                <ul>
+                    {% for item in sports %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                 {# Add source info if available in future data structure #}
             {% else %}
                 <p>No sports news available.</p>
             {% endif %}
@@ -188,18 +182,21 @@
             const resultsDiv = document.getElementById("search-results");
             resultsDiv.innerHTML = `<p>Searching for trivia on \"${category}\"...</p>`;
 
-            fetch(`/api/search_category?query=${encodeURIComponent(category)}`)
+            // Updated API endpoint
+            fetch(`/search_category?query=${encodeURIComponent(category)}`)
                 .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.json();
                 })
                 .then(data => {
                     resultsDiv.innerHTML = ""; 
-                    if (data.results && data.results.length > 0) {
+                    // Assuming data is now a list of strings as per main.py placeholder
+                    if (data && data.length > 0) {
                         const list = document.createElement("ul");
-                        data.results.forEach(item => {
+                        data.forEach(item => {
                             const listItem = document.createElement("li");
-                            listItem.innerHTML = `<strong>Q:</strong> ${item.question}<br><strong>A:</strong> ${item.answer}`;
+                            // Displaying placeholder string directly
+                            listItem.textContent = item; 
                             list.appendChild(listItem);
                         });
                         resultsDiv.appendChild(list);
@@ -221,7 +218,7 @@
         const optionsDiv = document.getElementById("geo-quiz-options");
         const feedbackDiv = document.getElementById("geo-quiz-feedback");
         const nextQuestionBtn = document.getElementById("next-geo-question");
-        let currentQuestionId = null;
+        let currentQuestionData = null; // Store the whole question data
 
         startQuizBtn.addEventListener("click", loadGeoQuestion);
         nextQuestionBtn.addEventListener("click", loadGeoQuestion);
@@ -234,13 +231,14 @@
             nextQuestionBtn.style.display = "none";
             questionImageElem.style.display = "none"; // Hide image initially
 
-            fetch("/api/geo_quiz/question")
+            // Updated API endpoint
+            fetch("/geo_quiz/question") 
                 .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.json();
                 })
                 .then(question => {
-                    currentQuestionId = question.id;
+                    currentQuestionData = question; // Store fetched question data
                     questionTextElem.textContent = question.question;
 
                     if (question.image_url) {
@@ -250,12 +248,8 @@
                         questionImageElem.style.display = "none";
                     }
 
-                    // Enable option buttons
-                    const buttons = optionsDiv.getElementsByTagName("button");
-                    for (let btn of buttons) {
-                        btn.disabled = false;
-                    }
-
+                    // Clear and create new buttons
+                    optionsDiv.innerHTML = ""; 
                     question.options.forEach(option => {
                         const button = document.createElement("button");
                         button.textContent = option;
@@ -276,34 +270,21 @@
                 btn.disabled = true;
             }
 
-            fetch("/api/geo_quiz/check_answer", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ question_id: currentQuestionId, answer: selectedAnswer }),
-            })
-            .then(response => {
-                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                 return response.json();
-            })
-            .then(result => {
-                if (result.correct) {
+            // Check answer client-side (since backend doesn't have check_answer)
+            if (currentQuestionData) {
+                if (selectedAnswer === currentQuestionData.answer) {
                     feedbackDiv.textContent = "Correct!";
                     feedbackDiv.className = "correct";
                 } else {
-                    feedbackDiv.textContent = `Incorrect. The correct answer was: ${result.correct_answer}`;
+                    feedbackDiv.textContent = `Incorrect. The correct answer was: ${currentQuestionData.answer}`;
                     feedbackDiv.className = "incorrect";
                 }
                 nextQuestionBtn.style.display = "block"; // Show next question button
-            })
-            .catch(error => {
-                 console.error("Error checking answer:", error);
-                 feedbackDiv.textContent = "Error checking answer. Please try again.";
+            } else {
+                 feedbackDiv.textContent = "Error checking answer (no question data). Please try again.";
                  feedbackDiv.className = "incorrect";
-                 // Optionally re-enable buttons or show next button anyway
                  nextQuestionBtn.style.display = "block"; 
-            });
+            }
         }
 
         // Manual Data Update Logic
@@ -314,9 +295,13 @@
             updateStatusDiv.textContent = "Updating data... Please wait.";
             updateDataBtn.disabled = true;
 
-            fetch("/api/update_data", { method: "POST" })
+            // Updated API endpoint
+            fetch("/update_data", { method: "POST" }) 
                 .then(response => {
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    // Check if response is ok, otherwise parse error message if possible
+                    if (!response.ok) {
+                        return response.json().then(err => { throw new Error(err.message || `HTTP error! status: ${response.status}`); });
+                    }
                     return response.json();
                 })
                 .then(data => {
@@ -326,7 +311,7 @@
                 })
                 .catch(error => {
                     console.error("Error updating data:", error);
-                    updateStatusDiv.textContent = "Error occurred during data update.";
+                    updateStatusDiv.textContent = `Error occurred during data update: ${error.message}`;
                 })
                 .finally(() => {
                     updateDataBtn.disabled = false; // Re-enable button

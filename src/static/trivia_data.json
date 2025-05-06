@@ -1,349 +1,227 @@
 {
-    "current_events": [
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "U.S. President Donald Trump announces a universal 10% tariff on most imports, 20% on EU goods, and 34% on Chinese goods.",
-            "source": "Reuters"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "China increases tariffs on U.S. goods to 84%.",
-            "source": "BBC News"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "Trump raises tariffs on Chinese goods to 125%.",
-            "source": "BBC News"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "Amazon suspends orders on some Chinese/Asian goods amid trade war fears.",
-            "source": "Bloomberg"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "Canada announces a 25% tariff on certain U.S. vehicle imports.",
-            "source": "BBC News"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "EU announces retaliatory duties",
-            "source": "10-25%"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "Russian artillery/glide bombs hit Kherson, Ukraine, killing one, injuring nine.",
-            "source": "AP"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "Large-scale drone attack on Dnipro, Ukraine, kills two, injures 16.",
-            "source": "Reuters"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "Al-Shabaab militants capture Adan Yabal District, Somalia.",
-            "source": "Reuters"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "California sues the Trump administration over tariffs.",
-            "source": "Politico"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "Boat collision on Lewis Smith Lake, Alabama, kills three during a fishing tournament.",
-            "source": "ABC News"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "UK suspends EU cheese/meat imports due to foot-and-mouth disease concerns.",
-            "source": "BBC News"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "Slovak government passes controversial NGO funding disclosure law.",
-            "source": "DW"
-        },
-        {
-            "id": null,
-            "date": "April 21",
-            "description": "James Webb Space Telescope detects dimethyl sulfide",
-            "source": "potential biosignature"
-        },
-        {
-            "id": null,
-            "date": "April 22",
-            "description": "Russian forces target Kharkiv with Geran-2 drones.",
-            "source": "Ukrainska Pravda"
-        },
-        {
-            "id": null,
-            "date": "April 22",
-            "description": "Russian missile strike hits industrial park in Kryvyi Rih, Ukraine.",
-            "source": "Reuters"
-        },
-        {
-            "id": null,
-            "date": "April 22",
-            "description": "Israeli Air Force launches airstrikes in Syria targeting military infrastructure.",
-            "source": "The Times of Israel"
-        },
-        {
-            "id": null,
-            "date": "April 23",
-            "description": "U.S. President Trump announces universal 10% tariff on most imports, 20% on EU goods, and 34% on Chinese goods",
-            "source": "This seems like a duplicate or clarification from April 21st entry, keeping for now"
-        },
-        {
-            "id": null,
-            "date": "May 2",
-            "description": "A Gaza-bound activist aid ship",
-            "source": "Gaza Freedom Flotilla"
-        },
-        {
-            "id": null,
-            "date": "May 2",
-            "description": "_Rust_ movie released theatrically in the US, years after the fatal on-set shooting.",
-            "source": "The New York Times"
-        },
-        {
-            "id": null,
-            "date": "May 2",
-            "description": "Trump administration terminates _de minimis_ tariff exemption; Shein/Temu adjust prices/shipping.",
-            "source": "The New York Times, BBC"
-        },
-        {
-            "id": null,
-            "date": "May 5",
-            "description": "Israeli Security Cabinet confirms plans for indefinite occupation of Gaza.",
-            "source": "The Guardian"
-        },
-        {
-            "id": null,
-            "date": "May 5",
-            "description": "Mass shooting and shootout in Makhachkala, Dagestan, Russia.",
-            "source": "Reuters"
-        },
-        {
-            "id": null,
-            "date": "May 5",
-            "description": "The Vatican announces plans to convert the Popemobile into a mobile health clinic for wounded children in Gaza.",
-            "source": "The Sydney Morning Herald"
-        }
-    ],
-    "music": {
-        "top_songs": [
-            {
-                "rank": 1,
-                "title": "Luther",
-                "artist": "Kendrick Lamar & SZA"
-            },
-            {
-                "rank": 2,
-                "title": "Die With A Smile",
-                "artist": "Lady Gaga & Bruno Mars"
-            },
-            {
-                "rank": 3,
-                "title": "Ordinary",
-                "artist": "Alex Warren"
-            },
-            {
-                "rank": 4,
-                "title": "Nokia",
-                "artist": "Drake"
-            },
-            {
-                "rank": 5,
-                "title": "A Bar Song (Tipsy)",
-                "artist": "Shaboozey"
-            },
-            {
-                "rank": 6,
-                "title": "Pink Pony Club",
-                "artist": "Chappell Roan"
-            },
-            {
-                "rank": 7,
-                "title": "I'm The Problem",
-                "artist": "Morgan Wallen"
-            },
-            {
-                "rank": 8,
-                "title": "I Ain't Coming Back",
-                "artist": "Morgan Wallen & Post Malone"
-            },
-            {
-                "rank": 9,
-                "title": "Lose Control",
-                "artist": "Teddy Swims"
-            },
-            {
-                "rank": 10,
-                "title": "Beautiful Things",
-                "artist": "Benson Boone"
-            },
-            {
-                "rank": 11,
-                "title": "All The Way",
-                "artist": "BigXthaPlug Featuring Bailey Zimmerman"
-            },
-            {
-                "rank": 12,
-                "title": "Anxiety",
-                "artist": "Doechii"
-            },
-            {
-                "rank": 13,
-                "title": "Birds Of A Feather",
-                "artist": "Billie Eilish"
-            },
-            {
-                "rank": 14,
-                "title": "Just In Case",
-                "artist": "Morgan Wallen"
-            },
-            {
-                "rank": 15,
-                "title": "I Had Some Help",
-                "artist": "Post Malone Featuring Morgan Wallen"
-            },
-            {
-                "rank": 16,
-                "title": "APT.",
-                "artist": "ROSE & Bruno Mars"
-            },
-            {
-                "rank": 17,
-                "title": "Love Somebody",
-                "artist": "Morgan Wallen"
-            },
-            {
-                "rank": 18,
-                "title": "Mutt",
-                "artist": "Leon Thomas"
-            },
-            {
-                "rank": 19,
-                "title": "Espresso",
-                "artist": "Sabrina Carpenter"
-            },
-            {
-                "rank": 20,
-                "title": "That's So True",
-                "artist": "Gracie Abrams"
-            }
-        ],
-        "source_name": "Billboard Hot 100",
-        "source_url": "https://www.billboard.com/charts/hot-100/"
+  "events": [
+    {
+      "headline": "Monday Briefing: Inside Australia\u2019s Election",
+      "url": "https://www.nytimes.com/2025/05/04/briefing/australia-election-albanese-dutton.html",
+      "summary": "Plus, analyzing a scene in \u201cSinners.\u201d",
+      "date": "May 3-5, 2025"
     },
-    "movies": [],
-    "sports": {
-        "categories": {
-            "NFL": [
-                {
-                    "headline": "Washington D.C. named host city for the 2027 NFL Draft.",
-                    "date": "May 5"
-                },
-                {
-                    "headline": "Former Patriots WR Julian Edelman voted into the team's Hall of Fame by fans.",
-                    "date": "May 5"
-                },
-                {
-                    "headline": "Cleveland Browns LB Devin Bush arrested and charged with assault.",
-                    "date": "May 5"
-                },
-                {
-                    "headline": "Buffalo Bills reportedly adding free agent WR Elijah Moore.",
-                    "date": "May 5"
-                },
-                {
-                    "headline": "Green Bay Packers picked up the 5th-year option for DL Devonte Wyatt, declined option for LB Quay Walker.",
-                    "date": "May 5"
-                },
-                {
-                    "headline": "The 2025 NFL Draft took place from April 25-27, with QB Cam Ward selected first overall by the Indianapolis Colts.",
-                    "date": null
-                },
-                {
-                    "headline": "Former agent and business partner of John Elway, Gary Zimmerman, died after a fall.",
-                    "date": "May 3"
-                }
-            ],
-            "NBA": [
-                {
-                    "headline": "The second round of the 2025 NBA Playoffs is underway. Key matchups include Celtics vs. Knicks and Thunder vs. Nuggets.",
-                    "date": "May 5"
-                },
-                {
-                    "headline": "Utah Jazz and Head Coach Will Hardy agreed to a contract extension.",
-                    "date": "May 5"
-                },
-                {
-                    "headline": "Tyrese Haliburton led the Indiana Pacers to a Game 1 victory over the Cleveland Cavaliers in the Eastern Conference Semifinals.",
-                    "date": "May 4"
-                },
-                {
-                    "headline": "The Golden State Warriors defeated the Houston Rockets in Game 7 of their first-round series.",
-                    "date": "May 5"
-                },
-                {
-                    "headline": "The Denver Nuggets defeated the Los Angeles Clippers in Game 7 of their first-round series, setting up a matchup with the Oklahoma City Thunder.",
-                    "date": "May 3"
-                },
-                {
-                    "headline": "Gregg Popovich announced his retirement as head coach of the San Antonio Spurs; Mitch Johnson named successor.",
-                    "date": "May 3"
-                }
-            ],
-            "MLB": [
-                {
-                    "headline": "Arizona Diamondbacks unveiled new City Connect uniforms.",
-                    "date": "May 5"
-                },
-                {
-                    "headline": "Kansas City Royals set a club record by hitting seven home runs in a game against the Baltimore Orioles. Maikel Garcia hit two.",
-                    "date": "May 4"
-                },
-                {
-                    "headline": "Boston Red Sox 1B Triston Casas confirmed out for the season after knee surgery.",
-                    "date": "May 5"
-                },
-                {
-                    "headline": "Shohei Ohtani and Freddie Freeman homered as the Los Angeles Dodgers defeated the Atlanta Braves. Roki Sasaki earned his first MLB win.",
-                    "date": "May 5"
-                },
-                {
-                    "headline": "Chicago Cubs rookie Pete Crow-Armstrong homered for the third time in two games.",
-                    "date": "May 3"
-                },
-                {
-                    "headline": "Los Angeles Angels star Mike Trout placed on the Injured List with a bone bruise.",
-                    "date": "May 2"
-                },
-                {
-                    "headline": "Cincinnati Reds pitcher Hunter Greene struck out 12 batters against the Washington Nationals.",
-                    "date": "May 2"
-                },
-                {
-                    "headline": "San Diego Padres star Fernando Tatis Jr. left a game after being hit by a pitch; X-rays were negative.",
-                    "date": "May 2"
-                }
-            ]
-        }
+    {
+      "headline": "80 Years After Dachau Concentration Camp Liberation, Witnesses Remember",
+      "url": "https://www.nytimes.com/2025/05/04/world/europe/dachau-liberation-anniversary.html",
+      "summary": "The anniversary of the end of the Nazi era comes at a pivotal time for Germans. The last of the survivors, liberators and perpetrators are dying, as the far right is becoming more established.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Sudan\u2019s Army Says Paramilitary Forces Struck Civilian Targets",
+      "url": "https://www.nytimes.com/2025/05/04/world/africa/sudan-port-sudan-attacks.html",
+      "summary": "The strikes targeted an airport, a warehouse and several civilian facilities in the eastern city of Port Sudan, the army said.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "A Conclave Like No Other",
+      "url": "https://www.nytimes.com/2025/05/04/world/europe/pope-conclave-cardinals.html",
+      "summary": "More cardinals from more countries than ever will gather in the Sistine Chapel starting Wednesday to choose a new pope at a precarious time for the church.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Francis Opened Discussions to Those Outside the Church Hierarchy. This Cardinal Would, Too",
+      "url": "https://www.nytimes.com/2025/05/04/world/europe/pope-conclave-cardinal-mario-grech.html",
+      "summary": "Cardinal Mario Grech comes from Malta, but is known to cardinals around the world for his role as the secretary general of an advisory body of bishops.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "A Popemobile Will Ride Again, This Time Into Gaza",
+      "url": "https://www.nytimes.com/2025/05/04/world/middleeast/pope-francis-gaza-popemobile-clinic.html",
+      "summary": "In his last months, Pope Francis blessed an effort to transform the vehicle he used when he visited the West Bank in 2014 into a mobile health clinic to treat Palestinian children in the Gaza Strip.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Houthi Missile Hits Near Tel Aviv Airport",
+      "url": "https://www.nytimes.com/2025/05/04/world/middleeast/houthi-missile-tel-aviv-airport.html",
+      "summary": "Some international airlines suspended flights, and Israel\u2019s prime minister, Benjamin Netanyahu, threatened to retaliate.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Israel Mobilizes Two Reserve Soldiers",
+      "url": "https://www.nytimes.com/2025/05/03/world/middleeast/israel-mobilizes-reservists-gaza.html",
+      "summary": "The mobilization could indicate that Israel is preparing to shift its tactics in its fight against Hamas.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Oil Prices Are Falling. Here\u2019s Where That Could Spell Trouble.",
+      "url": "https://www.nytimes.com/2025/05/03/world/europe/oil-prices-tariffs.html",
+      "summary": "For countries that depend heavily on oil revenue, dropping prices are worrisome.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Australia\u2019s Prime Minister Wins Second Term",
+      "url": "https://www.nytimes.com/video/world/australia/100000010145485/australia-election-prime-minister-albanese-dutton.html",
+      "summary": "Prime Minister Anthony Albanese of Australia won in a resounding defeat of the conservative opposition led by Peter Dutton.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Ukraine Rejects Russian Call for a Three-Day Cease-Fire",
+      "url": "https://www.nytimes.com/2025/05/03/world/europe/ukraine-russia-ceasefire-talks.html",
+      "summary": "President Volodymyr Zelensky called the proposal a \u201ctheatrical show\u201d and said such a short truce would not bolster negotiations for a lasting peace.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Hikers Stumble Upon a Pile of Gold Coins, Igniting a Historical Hunt",
+      "url": "https://www.nytimes.com/2025/05/03/world/europe/czech-treasure-gold-discovery.html",
+      "summary": "The discovery of coins and jewelry in the Czech Republic worth up to $680,000 raises a tantalizing mystery for historians and amateur sleuths: Who buried the treasure?",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "\u2018We\u2019re All in One Ship\u2019: Druse in Syrian Town Rocked by Violence Agree to Disarm Militias",
+      "url": "https://www.nytimes.com/2025/05/03/world/middleeast/syria-druse-sectarian-violence.html",
+      "summary": "After this week\u2019s bloodshed, Druse leaders in Ashrafieh Sahnaya agreed to integrate militia fighters into government forces. But some residents remain wary.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Cardinal Parolin, Leader of Papal Conclave, Is Also a Top Candidate",
+      "url": "https://www.nytimes.com/2025/05/03/world/europe/pope-conclave-cardinal-pietro-parolin.html",
+      "summary": "Cardinals have talked about Cardinal Pietro Parolin, the Vatican secretary of state, as someone who could have a steady, bureaucratic hand on the church\u2019s wheel.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "After Leading a Liberal Comeback, Carney Hits the Ground Running",
+      "url": "https://www.nytimes.com/2025/05/03/world/canada/carney-new-government.html",
+      "summary": "The prime minister will begin broad economic and security talks with President Trump next week and has set a timetable for his new government.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "These Contentious Issues Could Determine Who Becomes the Next Pope",
+      "url": "https://www.nytimes.com/2025/05/03/world/europe/pope-conclave-contentious-issues.html",
+      "summary": "As cardinals gather to elect Pope Francis\u2019 successor, they are facing debates over whether the church most needs change or constancy.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "As China Looks for Way Out of U.S. Trade Deadlock, Fentanyl Could Be Key",
+      "url": "https://www.nytimes.com/2025/05/03/world/asia/us-china-tariffs-fentanyl.html",
+      "summary": "Chinese officials have long used their willingness to cooperate to stem the flow of fentanyl to the United States as leverage in talks over broader disputes.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Visual Analysis Shows U.S. Likely Bombed Yemen Migrant Detention Center",
+      "url": "https://www.nytimes.com/video/world/middleeast/100000010137049/us-bombing-yemen-migrant-shelter.html",
+      "summary": "Videos and photos reveal remnants of at least three U.S.-made GBU-39 bombs at the site of an April 28 attack. The strike killed 68 African migrants, according to the Houthis, a militant group that controls northern Yemen.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "The Frightening Precedents for Trump\u2019s \u2018Legal Abyss\u2019",
+      "url": "https://www.nytimes.com/2025/05/03/world/trump-dual-state.html",
+      "summary": "The \u2018dual-state theory\u2019 explains how authoritarians bend the law to their will.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "The Americans Who Left",
+      "url": "https://www.nytimes.com/2025/05/03/world/canada/vietnam-war-opponents-canada-america.html",
+      "summary": "Some of the United States\u2019 Vietnam War opponents found refuge in Canada. Fifty years after the end of the war, they\u2019re still worried about the future.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Ghana Wanted a Cathedral. It Got an \u2018Expensive Hole\u2019 Instead.",
+      "url": "https://www.nytimes.com/2025/05/03/world/africa/ghana-cathedral-christian-corruption-hole.html",
+      "summary": "The nation had grand plans for a national cathedral designed by a celebrity architect. The $400 million project became a political battleground.",
+      "date": "May 3-5, 2025"
+    },
+    {
+      "headline": "Message From the Russian Military: \u2018We Lost Your Son\u2019",
+      "url": "https://www.nytimes.com/2025/05/03/world/europe/russia-missing-soldiers-ukraine-war.html",
+      "summary": "Russia lacks any formal, organized effort to account for legions of missing soldiers. That often leaves relatives in limbo, fending for themselves with scant government information.",
+      "date": "May 3-5, 2025"
     }
+  ],
+  "movies": [
+    {
+      "rank": 1,
+      "title": "Thunderbolts*",
+      "weekend_gross": "$76M",
+      "total_gross": "$76M",
+      "weeks_released": "N/A",
+      "summary": "After finding themselves ensnared in a death trap, an unconventional team of antiheroes must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.",
+      "stars": "Florence Pugh, Sebastian Stan, Julia Louis-Dreyfus"
+    },
+    {
+      "rank": 2,
+      "title": "Sinners",
+      "weekend_gross": "$33M",
+      "total_gross": "$180M",
+      "weeks_released": "N/A",
+      "summary": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
+      "stars": "Miles Caton, Saul Williams, Andrene Ward-Hammond"
+    },
+    {
+      "rank": 3,
+      "title": "A Minecraft Movie",
+      "weekend_gross": "$14M",
+      "total_gross": "$398M",
+      "weeks_released": "N/A",
+      "summary": "Four misfits are suddenly pulled through a mysterious portal into a bizarre cubic wonderland that thrives on imagination. To get back home they'll have to master this world while embarking on a quest with an unexpected expert crafter.",
+      "stars": "Jason Momoa, Jack Black, Sebastian Hansen"
+    },
+    {
+      "rank": 4,
+      "title": "The Accountant 2",
+      "weekend_gross": "$9.5M",
+      "total_gross": "$41M",
+      "weeks_released": "N/A",
+      "summary": "Christian Wolff applies his brilliant mind and illegal methods to reconstruct the unsolved puzzle of a Treasury chief's murder.",
+      "stars": "Ben Affleck, Jon Bernthal, Cynthia Addai-Robinson"
+    }
+  ],
+  "movie_source_info": "Weekend of May 2-4, 2025",
+  "music": [
+    "Source: Billboard Hot 100 (https://www.billboard.com/charts/hot-100/)",
+    "**Top 20 Songs:**",
+    "1.  Luther - Kendrick Lamar & SZA",
+    "2.  Die With A Smile - Lady Gaga & Bruno Mars",
+    "3.  Ordinary - Alex Warren",
+    "4.  Nokia - Drake",
+    "5.  A Bar Song (Tipsy) - Shaboozey",
+    "6.  Pink Pony Club - Chappell Roan",
+    "7.  I'm The Problem - Morgan Wallen",
+    "8.  I Ain't Coming Back - Morgan Wallen & Post Malone",
+    "9.  Lose Control - Teddy Swims",
+    "10. Beautiful Things - Benson Boone",
+    "11. All The Way - BigXthaPlug Featuring Bailey Zimmerman",
+    "12. Anxiety - Doechii",
+    "13. Birds Of A Feather - Billie Eilish",
+    "14. Just In Case - Morgan Wallen",
+    "15. I Had Some Help - Post Malone Featuring Morgan Wallen",
+    "16. APT. - ROSE & Bruno Mars",
+    "17. Love Somebody - Morgan Wallen",
+    "18. Mutt - Leon Thomas",
+    "19. Espresso - Sabrina Carpenter",
+    "20. That's So True - Gracie Abrams",
+    "*(Note: List continues on the source page)*"
+  ],
+  "sports": [
+    "Source: ESPN Latest News (http://www.espn.com/espn/latestnews)",
+    "**NFL:**",
+    "*   Washington D.C. named host city for the 2027 NFL Draft. (May 5)",
+    "*   Former Patriots WR Julian Edelman voted into the team's Hall of Fame by fans. (May 5)",
+    "*   Cleveland Browns LB Devin Bush arrested and charged with assault. (May 5)",
+    "*   Buffalo Bills reportedly adding free agent WR Elijah Moore. (May 5)",
+    "*   Green Bay Packers picked up the 5th-year option for DL Devonte Wyatt, declined option for LB Quay Walker. (May 5)",
+    "*   The 2025 NFL Draft took place from April 25-27, with QB Cam Ward selected first overall by the Indianapolis Colts.",
+    "*   Former agent and business partner of John Elway, Gary Zimmerman, died after a fall. (May 3)",
+    "**NBA:**",
+    "*   The second round of the 2025 NBA Playoffs is underway. Key matchups include Celtics vs. Knicks and Thunder vs. Nuggets. (May 5)",
+    "*   Utah Jazz and Head Coach Will Hardy agreed to a contract extension. (May 5)",
+    "*   Tyrese Haliburton led the Indiana Pacers to a Game 1 victory over the Cleveland Cavaliers in the Eastern Conference Semifinals. (May 4)",
+    "*   The Golden State Warriors defeated the Houston Rockets in Game 7 of their first-round series. (May 5)",
+    "*   The Denver Nuggets defeated the Los Angeles Clippers in Game 7 of their first-round series, setting up a matchup with the Oklahoma City Thunder. (May 3)",
+    "*   Gregg Popovich announced his retirement as head coach of the San Antonio Spurs; Mitch Johnson named successor. (May 3)",
+    "**MLB:**",
+    "*   Arizona Diamondbacks unveiled new City Connect uniforms. (May 5)",
+    "*   Kansas City Royals set a club record by hitting seven home runs in a game against the Baltimore Orioles. Maikel Garcia hit two. (May 4)",
+    "*   Boston Red Sox 1B Triston Casas confirmed out for the season after knee surgery. (May 5)",
+    "*   Shohei Ohtani and Freddie Freeman homered as the Los Angeles Dodgers defeated the Atlanta Braves. Roki Sasaki earned his first MLB win. (May 5)",
+    "*   Chicago Cubs rookie Pete Crow-Armstrong homered for the third time in two games. (May 3)",
+    "*   Los Angeles Angels star Mike Trout placed on the Injured List with a bone bruise. (May 2)",
+    "*   Cincinnati Reds pitcher Hunter Greene struck out 12 batters against the Washington Nationals. (May 2)",
+    "*   San Diego Padres star Fernando Tatis Jr. left a game after being hit by a pitch; X-rays were negative. (May 2)"
+  ]
 }
