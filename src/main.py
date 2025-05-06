@@ -254,10 +254,15 @@ def fetch_geo_questions_from_api():
             return jsonify({"success": True, "message": f"{len(processed_questions)} questions fetched successfully.", "count": len(processed_questions)})
         else:
             error_message = f"OpenTDB API Error (Code: {data.get('response_code')}): "
-            if data.get('response_code') == 1: error_message += "Not enough questions for your query."
-            elif data.get('response_code') == 2: error_message += "Invalid API parameter."
-            elif data.get('response_code') == 5: error_message += "Rate limit exceeded. Please wait 5 seconds."
-            else: error_message += "Unknown API error."
+            if data.get('response_code') == 1: 
+                error_message = "The API doesn't have enough geography questions for the selected difficulty. Please try a different difficulty or try again later."
+            elif data.get('response_code') == 2: 
+                error_message = "Invalid parameter sent to the Trivia API. This is an internal error."
+            # Codes 3 and 4 are for Token issues, not relevant for our no-token usage.
+            elif data.get('response_code') == 5: 
+                error_message = "You're requesting questions too frequently from the API. Please wait about 10 seconds and try again."
+            else: 
+                error_message = f"An unknown error occurred with the Trivia API (Code: {data.get('response_code')})."
             return jsonify({"success": False, "error": error_message}), 500
 
     except requests.exceptions.RequestException as e:
