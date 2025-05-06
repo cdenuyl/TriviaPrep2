@@ -215,12 +215,23 @@
 
         <!-- Geography Quiz -->
         <section id="geo-quiz">
-            <h2>Geography Quiz</h2>
-            <button id="start-geo-quiz">Start Geography Quiz</button>
+            <h2>Geography Quiz (Powered by OpenTDB)</h2>
+            <div id="geo-quiz-controls">
+                <label for="geo-difficulty">Select Difficulty:</label>
+                <select id="geo-difficulty">
+                    <option value="any" selected>Any Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <button id="fetch-geo-questions-btn">Get Geography Questions (Max 50)</button>
+                <p id="geo-fetch-status"></p>
+            </div>
             <div id="geo-quiz-content" style="display: none;">
                 <div id="geo-quiz-question">
                     <p id="geo-question-text"></p>
-                    <img id="geo-question-image" src="" alt="Quiz Image" style="display: none;"/>
+                    <p id="geo-question-info" style="font-size: 0.9em; color: #555;"></p> <!-- For difficulty/type -->
+                    <img id="geo-question-image" src="" alt="Quiz Image" style="display: none;"/> <!-- Kept for potential future use, but OpenTDB is text based -->
                 </div>
                 <div id="geo-quiz-options"></div>
                 <div id="geo-quiz-feedback"></div>
@@ -270,78 +281,118 @@
                 });
         });
 
-        // Geography Quiz Logic
-        const startQuizBtn = document.getElementById("start-geo-quiz");
+        // Geography Quiz Logic (Now API Based)
+        const fetchGeoQuestionsBtn = document.getElementById("fetch-geo-questions-btn");
+        const geoDifficultySelect = document.getElementById("geo-difficulty");
+        const geoFetchStatus = document.getElementById("geo-fetch-status");
+        
         const quizContentDiv = document.getElementById("geo-quiz-content");
         const questionTextElem = document.getElementById("geo-question-text");
-        const questionImageElem = document.getElementById("geo-question-image");
+        const questionInfoElem = document.getElementById("geo-question-info"); // For difficulty/type
+        const questionImageElem = document.getElementById("geo-question-image"); // Kept for future, but API is text
         const optionsDiv = document.getElementById("geo-quiz-options");
         const feedbackDiv = document.getElementById("geo-quiz-feedback");
         const nextQuestionBtn = document.getElementById("next-geo-question");
-        let currentQuestionData = null; // Store the whole question data
+        let currentQuestionData = null;
 
-        startQuizBtn.addEventListener("click", loadGeoQuestion);
-        nextQuestionBtn.addEventListener("click", loadGeoQuestion);
+        fetchGeoQuestionsBtn.addEventListener("click", fetchNewGeoBatch);
+        nextQuestionBtn.addEventListener("click", loadNextGeoQuestionFromBatch);
 
-        function loadGeoQuestion() {
-            startQuizBtn.style.display = "none";
+        function fetchNewGeoBatch() {
+            const difficulty = geoDifficultySelect.value;
+            geoFetchStatus.textContent = `Fetching questions (Difficulty: ${difficulty})...`;
+            fetchGeoQuestionsBtn.disabled = true;
+            quizContentDiv.style.display = "none"; // Hide quiz while fetching new batch
+            nextQuestionBtn.style.display = "none";
+            feedbackDiv.innerHTML = "";
+
+            fetch(`/geo_quiz/fetch_questions?difficulty=${difficulty}`)
+                .then(response => response.json())
+                .then(data => {
+                    fetchGeoQuestionsBtn.disabled = false;
+                    if (data.success) {
+                        geoFetchStatus.textContent = `${data.count} questions loaded! Difficulty: ${difficulty}.`;
+                        // Automatically load the first question of the new batch
+                        loadNextGeoQuestionFromBatch(); 
+                    } else {
+                        geoFetchStatus.textContent = `Error: ${data.error || "Could not fetch questions."}`;
+                    }
+                })
+                .catch(error => {
+                    fetchGeoQuestionsBtn.disabled = false;
+                    geoFetchStatus.textContent = "Network error or server issue fetching questions.";
+                    console.error("Error fetching new geo batch:", error);
+                });
+        }
+
+        function loadNextGeoQuestionFromBatch() {
             quizContentDiv.style.display = "block";
             feedbackDiv.innerHTML = "";
-            optionsDiv.innerHTML = ""; // Clear previous options
+            optionsDiv.innerHTML = ""; 
             nextQuestionBtn.style.display = "none";
-            questionImageElem.style.display = "none"; // Hide image initially
+            questionImageElem.style.display = "none"; // API questions are text based
+            questionTextElem.textContent = "Loading next question...";
+            questionInfoElem.textContent = "";
 
-            // Updated API endpoint
             fetch("/geo_quiz/question") 
-                .then(response => {
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    return response.json();
-                })
-                .then(question => {
-                    currentQuestionData = question; // Store fetched question data
-                    questionTextElem.textContent = question.question;
-
-                    if (question.image_url) {
-                        questionImageElem.src = question.image_url;
-                        questionImageElem.style.display = "block";
-                    } else {
-                        questionImageElem.style.display = "none";
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error && data.end_of_batch) {
+                        questionTextElem.textContent = data.error;
+                        optionsDiv.innerHTML = "";
+                        feedbackDiv.innerHTML = "";
+                        nextQuestionBtn.style.display = "none";
+                        // Optionally, re-enable fetch button or provide a message to fetch new batch
+                        geoFetchStatus.textContent = "All questions in this batch answered. Fetch a new set!";
+                        fetchGeoQuestionsBtn.disabled = false;
+                        return;
+                    } else if (data.error) {
+                        throw new Error(data.error);
                     }
+                    
+                    currentQuestionData = data;
+                    questionTextElem.innerHTML = data.question; // Use innerHTML to render HTML entities if any (already unescaped by backend)
+                    questionInfoElem.textContent = `Category: ${data.category} | Difficulty: ${data.difficulty} | Type: ${data.type}`;
 
-                    // Clear and create new buttons
-                    optionsDiv.innerHTML = ""; 
-                    question.options.forEach(option => {
+                    // OpenTDB questions are text-based, so image_url will be null
+                    // if (data.image_url) { ... }
+
+                    data.options.forEach(option => {
                         const button = document.createElement("button");
-                        button.textContent = option;
+                        button.innerHTML = option; // Use innerHTML for options too
                         button.onclick = () => submitGeoAnswer(option);
                         optionsDiv.appendChild(button);
                     });
                 })
                 .catch(error => {
-                    console.error("Error fetching geography question:", error);
-                    questionTextElem.textContent = "Error loading question. Please try again.";
+                    console.error("Error fetching/displaying geography question:", error);
+                    questionTextElem.textContent = `Error loading question: ${error.message}. Try fetching a new set.`;
+                    geoFetchStatus.textContent = `Error: ${error.message}. Try fetching a new set.`;
+                    fetchGeoQuestionsBtn.disabled = false;
                 });
         }
 
         function submitGeoAnswer(selectedAnswer) {
-            // Disable option buttons after selection
             const buttons = optionsDiv.getElementsByTagName("button");
             for (let btn of buttons) {
                 btn.disabled = true;
             }
 
-            // Check answer client-side (since backend doesn't have check_answer)
             if (currentQuestionData) {
-                if (selectedAnswer === currentQuestionData.answer) {
+                // Normalize answers for comparison, e.g. if API sends boolean as string "True" vs true
+                const correctAnswer = String(currentQuestionData.answer);
+                const normalizedSelectedAnswer = String(selectedAnswer);
+
+                if (normalizedSelectedAnswer === correctAnswer) {
                     feedbackDiv.textContent = "Correct!";
                     feedbackDiv.className = "correct";
                 } else {
-                    feedbackDiv.textContent = `Incorrect. The correct answer was: ${currentQuestionData.answer}`;
+                    feedbackDiv.innerHTML = `Incorrect. The correct answer was: ${currentQuestionData.answer}`;
                     feedbackDiv.className = "incorrect";
                 }
-                nextQuestionBtn.style.display = "block"; // Show next question button
+                nextQuestionBtn.style.display = "block";
             } else {
-                 feedbackDiv.textContent = "Error checking answer (no question data). Please try again.";
+                 feedbackDiv.textContent = "Error checking answer. Please try again.";
                  feedbackDiv.className = "incorrect";
                  nextQuestionBtn.style.display = "block"; 
             }

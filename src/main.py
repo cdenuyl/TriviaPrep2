@@ -5,6 +5,7 @@ import random
 import requests
 from bs4 import BeautifulSoup
 import urllib.parse
+import html
 from flask import Flask, render_template, jsonify, request, url_for, session
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
@@ -14,7 +15,8 @@ app = Flask(__name__, static_folder="static", template_folder="./")
 app.secret_key = os.urandom(24) # Needed for session management
 
 DATA_FILE = os.path.join(app.static_folder, "trivia_data.json")
-GEO_QUIZ_FILE = os.path.join(app.static_folder, "geo_quiz_data.json")
+# GEO_QUIZ_FILE = os.path.join(app.static_folder, "geo_quiz_data.json") # Static file, replaced by API
+OPENTDB_API_URL = "https://opentdb.com/api.php"
 
 def load_data(filepath):
     """Loads JSON data from a file."""
@@ -200,40 +202,93 @@ def search_category():
         return jsonify({"error": f"Failed to parse search results: {e}"}), 500
 
     return jsonify(results)
+@app.route("/geo_quiz/fetch_questions", methods=["GET"])
+def fetch_geo_questions_from_api():
+    """Fetches geography quiz questions from OpenTDB API."""
+    amount = 50 # As requested by user
+    category = 22 # Geography
+    difficulty = request.args.get("difficulty", "any") # easy, medium, hard, or any
+    q_type = request.args.get("type", "any") # multiple, boolean, or any
+
+    params = {
+        "amount": amount,
+        "category": category,
+    }
+    if difficulty != "any":
+        params["difficulty"] = difficulty
+    if q_type != "any":
+        params["type"] = q_type
+    
+    # Use default encoding as per user request (no 'encode' parameter needed for default)
+
+    try:
+        response = requests.get(OPENTDB_API_URL, params=params, timeout=10)
+        response.raise_for_status() # Raise an HTTPError for bad responses (4XX or 5XX)
+        data = response.json()
+
+        if data.get("response_code") == 0:
+            processed_questions = []
+            for idx, q_data in enumerate(data.get("results", [])):
+                # Decode HTML entities
+                question_text = html.unescape(q_data.get("question"))
+                correct_answer = html.unescape(q_data.get("correct_answer"))
+                incorrect_answers = [html.unescape(ans) for ans in q_data.get("incorrect_answers", [])]
+                
+                options = incorrect_answers + [correct_answer]
+                random.shuffle(options) # Shuffle options for display
+                
+                processed_questions.append({
+                    "id": f"api_{idx}_{random.randint(1000,9999)}", # Create a unique ID for session tracking within this batch
+                    "question": question_text,
+                    "options": options,
+                    "answer": correct_answer,
+                    "type": q_data.get("type"),
+                    "difficulty": q_data.get("difficulty"),
+                    "category": q_data.get("category")
+                    # No image_url for OpenTDB questions unless we want to try and find some based on question text (out of scope for now)
+                })
+            
+            # Store this batch in session to serve one by one
+            session["current_geo_quiz_batch"] = processed_questions
+            session["seen_in_batch_geo_questions"] = [] # Reset seen list for the new batch
+            return jsonify({"success": True, "message": f"{len(processed_questions)} questions fetched successfully.", "count": len(processed_questions)})
+        else:
+            error_message = f"OpenTDB API Error (Code: {data.get('response_code')}): "
+            if data.get('response_code') == 1: error_message += "Not enough questions for your query."
+            elif data.get('response_code') == 2: error_message += "Invalid API parameter."
+            elif data.get('response_code') == 5: error_message += "Rate limit exceeded. Please wait 5 seconds."
+            else: error_message += "Unknown API error."
+            return jsonify({"success": False, "error": error_message}), 500
+
+    except requests.exceptions.RequestException as e:
+        return jsonify({"success": False, "error": f"Failed to fetch questions from OpenTDB: {e}"}), 500
+    except Exception as e:
+        return jsonify({"success": False, "error": f"An unexpected error occurred: {e}"}), 500
+
 @app.route("/geo_quiz/question", methods=["GET"])
 def get_geo_question():
-    """Gets a random geography quiz question, ensuring no repeats until all are shown."""
-    geo_data = load_data(GEO_QUIZ_FILE)
-    if not geo_data or not isinstance(geo_data, list) or not geo_data:
-        return jsonify({"error": "Could not load or parse geography quiz data, or data is empty."}), 500
+    """Gets a random geography quiz question from the current fetched batch, ensuring no repeats within the batch."""
+    current_batch = session.get("current_geo_quiz_batch", [])
+    if not current_batch:
+        return jsonify({"error": "No questions fetched yet. Please fetch a new set of questions.", "end_of_batch": True}), 404
 
-    seen_questions_ids = session.get("seen_geo_questions", [])
+    seen_in_batch_ids = session.get("seen_in_batch_geo_questions", [])
     
-    available_questions = [q for q in geo_data if q.get("id") not in seen_questions_ids]
+    available_questions = [q for q in current_batch if q.get("id") not in seen_in_batch_ids]
 
     if not available_questions:
-        # All questions have been seen, reset the list for the new cycle
-        session["seen_geo_questions"] = []
-        available_questions = geo_data
-        seen_questions_ids = [] # Reset for current selection
-
-    if not available_questions: # Should not happen if geo_data is not empty initially
-        return jsonify({"error": "No available questions to choose from, even after reset."}), 500
+        # All questions in the current batch have been seen
+        return jsonify({"error": "All questions in the current batch have been answered. Fetch a new set?", "end_of_batch": True}), 200
 
     question = random.choice(available_questions)
     
-    # Add current question to seen list for this session
-    seen_questions_ids.append(question.get("id"))
-    session["seen_geo_questions"] = seen_questions_ids
-
-    # Ensure image path is correct for web access
-    if "image" in question and question["image"]:
-        question["image_url"] = url_for("static", filename=question["image"])
-    else:
-        question["image_url"] = None
+    seen_in_batch_ids.append(question.get("id"))
+    session["seen_in_batch_geo_questions"] = seen_in_batch_ids
+    
+    # OpenTDB questions don't have images by default
+    question["image_url"] = None 
         
-    return jsonify(question)
-if __name__ == "__main__":
+    return jsonify(question)if __name__ == "__main__":
     # Make sure to run on 0.0.0.0 to be accessible externally
     app.run(host="0.0.0.0", port=5000, debug=True) 
 
