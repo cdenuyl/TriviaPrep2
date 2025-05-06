@@ -163,9 +163,8 @@ def search_trivia_by_category():
                 error_message = "Invalid parameter sent to the Trivia API for category search. This is an internal error."
             elif data.get("response_code") == 5: 
                 error_message = "You\'re requesting questions too frequently from the API for category search. Please wait and try again."
-            else: 
-                error_message = f"An unknown error occurred with the Trivia API (Code: {data.get(\'response_code\')}) for category search."
-            # Return as a list with a single error string to match expected format of search results
+            else:                 error_message = f"An unknown error occurred with the Trivia API (Code: {data.get('response_code')}) for category search."
+           # Return as a list with a single error string to match expected format of search results
             return jsonify([error_message]) 
 
     except requests.exceptions.RequestException as e:
