@@ -108,9 +108,7 @@ def update_data():
         else:
              return jsonify({"success": False, "message": f"Data processing script failed with exit code {result}."}), 500
     except Exception as e:
-        print(f"Error running update script: {e}")
-        return jsonify({"success": False, "message": f"Error running update script: @app.route("/api/search_trivia_by_category", methods=["GET"])
-def search_trivia_by_category():
+        print(f"Error running update script: {e}")        return jsonify({"success": False, "message": f"Error running update script: {e}"})ef search_trivia_by_category():
     """Fetches trivia questions from OpenTDB for a specific category."""
     category_id = request.args.get("category_id")
     difficulty = request.args.get("difficulty", "any") # easy, medium, hard, or any
