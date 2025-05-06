@@ -1,57 +1,71 @@
 # Trivia Prep App - Task Checklist
 
-## Phase 1: Initial Setup and Core Features (Completed in Original Task)
+This checklist outlines the tasks for creating and improving the Trivia Prep Hub web application.
 
-- [X] Create Flask application structure.
-- [X] Implement basic data processing for current events, music, movies, sports.
-- [X] Create initial HTML template to display data.
-- [X] Implement basic category search (placeholder).
-- [X] Implement basic geography quiz (small dataset, potential image issues).
-- [X] Package application for Render deployment.
+## Phase 1: Initial Application Setup (Completed)
 
-## Phase 2: Enhancements and Fixes (Completed)
+-   [x] Create Flask application structure.
+-   [x] Implement basic data processing for static files (current events, music, movies, sports).
+-   [x] Create initial HTML template to display data.
+-   [x] Implement "Update Trivia Data" button (re-processes local files).
+-   [x] Implement basic category search (placeholder).
+-   [x] Implement basic geography quiz (static data, limited questions).
+-   [x] Package for Render deployment.
 
-- **Data Content Expansion & Refinement:**
-    - [X] Movies: Expand displayed movies from ~4 to the top 10.
-    - [X] TV Shows: Add a new section for current top TV shows, including summaries and actors.
-    - [X] Sports: Broaden sports news coverage to include more sports (e.g., Hockey, Baseball, Tennis, Golf).
+## Phase 2: Fixes and Initial Enhancements (Completed)
 
-- **User Interface and Experience:**
-    - [X] Sports Section: Redesign the sports section layout to more clearly separate news by sport.
-    - [X] Geography Quiz - Images: Resolved issues with images not displaying in the geography quiz (for static questions, now superseded by API).
-    - [X] Geography Quiz - Content: Significantly increase the number of questions in the geography quiz (previously 10 static, now dynamic via API).
-    - [X] Geography Quiz - Logic: Ensured geography quiz questions were presented randomly and did not repeat until all unique questions in the static pool had been shown (session-based non-repeating logic, now adapted for API batches).
-    - [X] Category Search: Improve the category search feature to provide actual, dynamic search results (e.g., top 10-20 web results) instead of placeholder messages or "could not find" errors.
+-   [x] Fix movie data parsing in `process_data.py`.
+-   [x] Fix geography quiz image paths in `geo_quiz_data.json`.
+-   [x] Address Render deployment issues (missing dependencies in `requirements.txt`).
 
-- **Backend and Deployment:**
-    - [X] Resolve any deployment errors (e.g., missing dependencies like `requests`, `beautifulsoup4`).
-    - [X] Ensure all new data sources are correctly processed and displayed.
-    - [X] Update `requirements.txt` with any new dependencies.
+## Phase 3: Major Feature Expansion (Completed)
 
-## Phase 3: Geography Quiz API Integration (OpenTDB)
+-   [x] **Movies:** Expand to top 10 movies with summaries and stars.
+-   [x] **TV Shows:** Add new section for top TV shows with summaries and actors.
+-   [x] **Sports:**
+    -   [x] Broaden sports news to include Hockey, Baseball, Tennis, Golf.
+    -   [x] Reorganize sports section with clear headings for each sport.
+-   [x] **Geography Quiz (Static - Pre-API):**
+    -   [x] Fix image display issues.
+    -   [x] Expand question pool (to 10 questions).
+    -   [x] Implement non-repeating random question logic (session-based for static data).
+-   [x] **Category Search (Initial Improvement - Pre-API):**
+    -   [x] Attempt to improve dynamic web search results (Google scraping - proved unreliable).
 
-- **API Integration & Logic:**
-    - [X] Clarify user requirements for OpenTDB API integration (difficulty, amount, refresh).
-    - [X] Design and implement backend logic to fetch geography questions from OpenTDB API.
-    - [X] Implement dynamic fetching of up to 50 questions per request.
-    - [X] Implement logic to handle API response codes and errors gracefully.
-    - [X] Implement session-based management for the current batch of API-fetched questions.
-    - [X] Implement non-repeating question logic within each fetched batch.
-    - [X] Ensure HTML unescaping for questions and answers from the API.
+## Phase 4: API Integration for Quiz & Search (Completed)
 
-- **User Interface for API Quiz:**
-    - [X] Add a dropdown menu for users to select quiz difficulty (Any, Easy, Medium, Hard).
-    - [X] Add a "Get Geography Questions" button to trigger API fetching based on selected difficulty.
-    - [X] Update the quiz display area to show questions and options from the API.
-    - [X] Display question category, difficulty, and type alongside the question.
-    - [X] Provide status messages during fetching and for API errors or end-of-batch notifications.
-    - [X] Ensure the "Next Question" button works correctly with the API-fetched batch.
+-   [x] **OpenTDB API Research:**
+    -   [x] Investigate OpenTDB API for geography quiz questions.
+    -   [x] Confirm API capabilities for categories, difficulty, and question types.
+    -   [x] Fetch list of all available categories from OpenTDB API.
+-   [x] **Quiz - OpenTDB Integration (All Categories):**
+    -   [x] **Backend:**
+        -   [x] Create new Flask route (`/api/get_trivia_categories`) to provide OpenTDB categories to the frontend.
+        -   [x] Modify existing quiz fetching routes (`/api/fetch_quiz_questions`, `/api/quiz_question`) to accept a `category_id` parameter.
+        -   [x] Ensure quiz logic fetches up to 50 questions from OpenTDB for the selected category and difficulty.
+        -   [x] Implement session management for the quiz batch and seen questions for any category.
+        -   [x] Improve error handling and user messaging for API issues (e.g., no questions available, rate limits).
+    -   [x] **Frontend:**
+        -   [x] Rename "Geography Quiz" to "Trivia Quiz".
+        -   [x] Add a dropdown menu to the quiz section for selecting any trivia category (populated from `/api/get_trivia_categories`), with "Any Category" as an option.
+        -   [x] Ensure difficulty selection (Any, Easy, Medium, Hard) is retained.
+        -   [x] Update JavaScript to call the new/modified API endpoints with selected category and difficulty.
+        -   [x] Ensure quiz display and interaction logic works for questions from any category.
+-   [x] **Category Search - OpenTDB Integration:**
+    -   [x] **Backend:**
+        -   [x] Create new Flask route (`/api/search_trivia_by_category`) to fetch trivia questions from OpenTDB based on a selected category ID and difficulty.
+        -   [x] Remove old Google scraping logic for category search.
+    -   [x] **Frontend:**
+        -   [x] Modify the "Category Search" section to use a dropdown for category selection (populated from `/api/get_trivia_categories`).
+        -   [x] Add a dropdown for difficulty selection (Any, Easy, Medium, Hard).
+        -   [x] Update JavaScript to call the new `/api/search_trivia_by_category` endpoint.
+        -   [x] Display fetched questions and answers (or error messages) in the results area.
 
-- **Validation & Finalization:**
-    - [X] Validate fetching of large question pools (up to 50) and refresh behavior.
-    - [X] Validate difficulty selection and its effect on API calls.
-    - [X] Validate error handling for API issues (e.g., rate limits, no questions found).
-    - [X] Update UI and JavaScript to fully support the new API-based quiz features.
-    - [X] Prepare a comprehensive summary of API integration changes for the user.
-    - [X] Package the updated application (source code and necessary static files) for the user to deploy.
+## Phase 5: Final Review and Packaging (Current)
+
+-   [ ] Review all implemented features for correctness and user experience.
+-   [ ] Ensure all data files are correctly packaged.
+-   [ ] Prepare final zip file for user deployment.
+-   [ ] Provide comprehensive update message to the user.
+
 
