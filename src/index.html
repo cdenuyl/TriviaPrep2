@@ -6,21 +6,21 @@
     <title>Trivia Prep Hub</title>
     <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
     <style>
-        /* Additional styles for quiz */
-        #geo-quiz-content {
+        /* Styles for quiz */
+        #quiz-content {
             margin-top: 1rem;
             padding: 1rem;
             border: 1px solid #ddd;
             border-radius: 4px;
             background-color: #f9f9f9;
         }
-        #geo-quiz-question img {
+        #quiz-question img { /* Kept for potential future, though OpenTDB is text */
             max-width: 100%;
             height: auto;
             margin-top: 10px;
             border: 1px solid #ccc;
         }
-        #geo-quiz-options button {
+        #quiz-options button {
             display: block;
             margin: 5px 0;
             padding: 10px;
@@ -30,10 +30,10 @@
             cursor: pointer;
             text-align: left;
         }
-        #geo-quiz-options button:hover {
+        #quiz-options button:hover {
             background-color: #ddd;
         }
-        #geo-quiz-feedback {
+        #quiz-feedback {
             margin-top: 10px;
             font-weight: bold;
         }
@@ -49,12 +49,12 @@
             color: #555;
         }
         .movie-item, #current-events li, #music li, #sports li {
-            margin-bottom: 15px; /* Add space between items */
-            padding-bottom: 10px; /* Add padding below items */
-            border-bottom: 1px solid #eee; /* Add a light separator */
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
         }
         .movie-item:last-child, #current-events li:last-child, #music li:last-child, #sports li:last-child {
-            border-bottom: none; /* Remove border for the last item */
+            border-bottom: none;
         }
     </style>
 </head>
@@ -101,7 +101,6 @@
                         <li>{{ item }}</li>
                     {% endfor %}
                 </ul>
-                {# Add source info if available in future data structure #}
             {% else %}
                 <p>No music data available.</p>
             {% endif %}
@@ -116,11 +115,9 @@
                         <h3>{{ movie.rank }}. {{ movie.title }}</h3>
                         <p><strong>Weekend Gross:</strong> {{ movie.weekend_gross }} | <strong>Total Gross:</strong> {{ movie.total_gross }}</p>
                         <p><strong>Summary:</strong> {{ movie.summary }}</p>
-                        {# Corrected Stars display - remove |join filter #}
                         <p><strong>Stars:</strong> {{ movie.stars }}</p> 
                     </article>
                 {% endfor %}
-                 {# Add source link if available in future data structure #}
             {% else %}
                 <p>No movie data available.</p>
             {% endif %}
@@ -143,7 +140,6 @@
         <!-- Sports -->
         <section id="sports-news-container">
             <h2>Notable Sports News (Last 2 Weeks)</h2>
-            
             <section id="hockey-news" class="sport-category">
                 <h3>Hockey News (NHL)</h3>
                 {% if hockey_news %}
@@ -156,7 +152,6 @@
                     <p>No hockey news available.</p>
                 {% endif %}
             </section>
-
             <section id="baseball-news" class="sport-category">
                 <h3>Baseball News (MLB)</h3>
                 {% if baseball_news %}
@@ -169,7 +164,6 @@
                     <p>No baseball news available.</p>
                 {% endif %}
             </section>
-
             <section id="tennis-news" class="sport-category">
                 <h3>Tennis News</h3>
                 {% if tennis_news %}
@@ -182,7 +176,6 @@
                     <p>No tennis news available.</p>
                 {% endif %}
             </section>
-
             <section id="golf-news" class="sport-category">
                 <h3>Golf News (PGA)</h3>
                 {% if golf_news %}
@@ -195,46 +188,34 @@
                     <p>No golf news available.</p>
                 {% endif %}
             </section>
-            
             {% if not hockey_news and not baseball_news and not tennis_news and not golf_news %}
                  <p>No sports news available at the moment.</p>
             {% endif %}
         </section>
 
         <!-- Category Search -->
-        <section id="category-search">
-            <h2>Category Search (Powered by OpenTDB)</h2>
-            <form id="search-form">
-                <label for="search-category-select">Select Category:</label>
-                <select id="search-category-select" name="search_category_id" required>
-                    <option value="" disabled selected>Loading categories...</option>
-                    <!-- Categories will be populated here by JavaScript -->
-                </select>
-                <label for="search-difficulty-select">Select Difficulty:</label>
-                <select id="search-difficulty-select" name="search_difficulty">
-                    <option value="any" selected>Any Difficulty</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
+        <section id="category-search-section"> <!-- Renamed ID -->
+            <h2>Category Search</h2>
+            <form id="category-search-form"> <!-- Renamed ID -->
+                <input type="text" id="category-search-input" placeholder="Enter any topic (e.g., Dinosaurs, 80s Music)" required>
                 <button type="submit">Search Trivia</button>
             </form>
-            <div id="search-results">
+            <div id="category-search-results">
                 <!-- Search results will be displayed here -->
             </div>
         </section>
 
-        <!-- Trivia Quiz (was Geography Quiz) -->
-        <section id="trivia-quiz">
+        <!-- Trivia Quiz (Powered by OpenTDB) -->
+        <section id="trivia-quiz-section"> <!-- Renamed ID -->
             <h2>Trivia Quiz (Powered by OpenTDB)</h2>
             <div id="quiz-controls">
-                <label for="quiz-category-select">Select Category:</label>
-                <select id="quiz-category-select" name="quiz_category_id" required>
-                    <option value="0" selected>Any Category</option> <!-- Default to Any Category for quiz -->
-                    <!-- Categories will be populated here by JavaScript -->
+                <label for="quiz-category">Select Category:</label>
+                <select id="quiz-category">
+                    <option value="any" selected>Any Category</option>
+                    <!-- Categories will be populated by JavaScript -->
                 </select>
-                <label for="quiz-difficulty-select">Select Difficulty:</label>
-                <select id="quiz-difficulty-select" name="quiz_difficulty">
+                <label for="quiz-difficulty">Select Difficulty:</label>
+                <select id="quiz-difficulty">
                     <option value="any" selected>Any Difficulty</option>
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
@@ -244,9 +225,10 @@
                 <p id="quiz-fetch-status"></p>
             </div>
             <div id="quiz-content" style="display: none;">
-                <div id="quiz-question-display">
+                <div id="quiz-question-area"> <!-- Renamed ID -->
                     <p id="quiz-question-text"></p>
                     <p id="quiz-question-info" style="font-size: 0.9em; color: #555;"></p>
+                    <img id="quiz-question-image" src="" alt="Quiz Image" style="display: none;"/>
                 </div>
                 <div id="quiz-options"></div>
                 <div id="quiz-feedback"></div>
@@ -261,63 +243,34 @@
     </footer>
 
     <script>
-        // Cate    <script>
-        // Function to populate category select dropdowns
-        function populateCategorySelects() {
-            const searchCategorySelect = document.getElementById("search-category-select");
-            const quizCategorySelect = document.getElementById("quiz-category-select");
-
-            fetch("/api/get_trivia_categories")
+        // Update Data Button Logic
+        document.getElementById("update-data-btn").addEventListener("click", function() {
+            const statusDiv = document.getElementById("update-status");
+            statusDiv.textContent = "Updating data... Please wait.";
+            fetch("/update_data", { method: "POST" })
                 .then(response => response.json())
-                .then(categories => {
-                    if (searchCategorySelect) {
-                        searchCategorySelect.innerHTML = 
-                            '<option value="" disabled selected>Select a category</option>'; // Reset placeholder
-                        categories.forEach(category => {
-                            const option = document.createElement("option");
-                            option.value = category.id;
-                            option.textContent = category.name;
-                            searchCategorySelect.appendChild(option);
-                        });
-                    }
-                    if (quizCategorySelect) {
-                        // Keep "Any Category" as the first default option for the quiz
-                        quizCategorySelect.innerHTML = 
-                            '<option value="0" selected>Any Category</option>'; 
-                        categories.forEach(category => {
-                            const option = document.createElement("option");
-                            option.value = category.id;
-                            option.textContent = category.name;
-                            quizCategorySelect.appendChild(option);
-                        });
+                .then(data => {
+                    statusDiv.textContent = data.message || "Update process finished.";
+                    if (data.success) {
+                        // Optionally, reload the page or parts of it if needed
+                        // window.location.reload(); 
                     }
                 })
                 .catch(error => {
-                    console.error("Error fetching categories:", error);
-                    if(searchCategorySelect) searchCategorySelect.innerHTML = 
-                        '<option value="" disabled selected>Error loading categories</option>';
-                    if(quizCategorySelect) quizCategorySelect.innerHTML = 
-                        '<option value="0" selected>Error loading categories</option>';
+                    console.error("Error updating data:", error);
+                    statusDiv.textContent = "Error updating data. Check console.";
                 });
-        }
+        });
 
-        // Call on page load
-        document.addEventListener("DOMContentLoaded", populateCategorySelects);
-
-        // Category Search Logic (Now API Based)
-        document.getElementById("search-form").addEventListener("submit", function(event) {
+        // Category Search Logic (Free Text - to be implemented with Option C)
+        document.getElementById("category-search-form").addEventListener("submit", function(event) {
             event.preventDefault(); 
-            const categoryId = document.getElementById("search-category-select").value;
-            const difficulty = document.getElementById("search-difficulty-select").value;
-            const resultsDiv = document.getElementById("search-results");
-            
-            if (!categoryId) {
-                resultsDiv.innerHTML = "<p>Please select a category to search.</p>";
-                return;
-            }
-            resultsDiv.innerHTML = `<p>Searching for trivia in category ID ${categoryId} (Difficulty: ${difficulty})...</p>`;
+            const query = document.getElementById("category-search-input").value;
+            const resultsDiv = document.getElementById("category-search-results");
+            resultsDiv.innerHTML = `<p>Searching for trivia on \"${query}\"... (Experimental)</p>`;
 
-            fetch(`/api/search_trivia_by_category?category_id=${categoryId}&difficulty=${difficulty}`)
+            // This will call the new /api/search_trivia_freetext endpoint
+            fetch(`/api/search_trivia_freetext?query=${encodeURIComponent(query)}`)
                 .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.json();
@@ -325,48 +278,65 @@
                 .then(data => {
                     resultsDiv.innerHTML = ""; 
                     if (data && data.length > 0) {
-                        // Check if the first item is an error message string
-                        if (typeof data[0] === 'string' && data[0].toLowerCase().includes("error")) {
-                            resultsDiv.innerHTML = `<p>${data[0]}</p>`;
-                            return;
-                        }
-                        if (typeof data[0] === 'string' && data[0].toLowerCase().includes("no trivia questions found")) {
-                            resultsDiv.innerHTML = `<p>${data[0]}</p>`;
-                            return;
-                        }
-
                         const list = document.createElement("ul");
                         data.forEach(item => {
                             const listItem = document.createElement("li");
-                            listItem.innerHTML = `<strong>Q:</strong> ${item.question}<br><strong>A:</strong> ${item.answer}`;
-                            if (item.difficulty) listItem.innerHTML += ` <small>(Difficulty: ${item.difficulty})</small>`;
-                            if (item.type) listItem.innerHTML += ` <small>(Type: ${item.type})</small>`;
+                            listItem.textContent = item; 
                             list.appendChild(listItem);
                         });
                         resultsDiv.appendChild(list);
                     } else {
-                        resultsDiv.innerHTML = `<p>No trivia results found for the selected criteria.</p>`;
+                        resultsDiv.innerHTML = `<p>No trivia results found for \"${query}\".</p>`;
                     }
                 })
                 .catch(error => {
-                    console.error("Error fetching search results:", error);
+                    console.error("Error fetching category search results:", error);
                     resultsDiv.innerHTML = "<p>Error fetching trivia results. Please try again later.</p>";
                 });
         });
 
-        // Trivia Quiz Logic (was Geography Quiz, now fully API Based)
+        // Trivia Quiz Logic (All Categories API Based)
         const fetchQuizQuestionsBtn = document.getElementById("fetch-quiz-questions-btn");
-        const quizCategorySelect = document.getElementById("quiz-category-select");
-        const quizDifficultySelect = document.getElementById("quiz-difficulty-select");
+        const quizCategorySelect = document.getElementById("quiz-category");
+        const quizDifficultySelect = document.getElementById("quiz-difficulty");
         const quizFetchStatus = document.getElementById("quiz-fetch-status");
         
-        const quizDisplayContentDiv = document.getElementById("quiz-content"); // Renamed from geo-quiz-content
+        const quizDisplayContentDiv = document.getElementById("quiz-content"); // Renamed variable for clarity
         const quizQuestionTextElem = document.getElementById("quiz-question-text");
         const quizQuestionInfoElem = document.getElementById("quiz-question-info");
+        const quizQuestionImageElem = document.getElementById("quiz-question-image");
         const quizOptionsDiv = document.getElementById("quiz-options");
         const quizFeedbackDiv = document.getElementById("quiz-feedback");
         const nextQuizQuestionBtn = document.getElementById("next-quiz-question-btn");
-        let currentQuizQuestionData = null;
+        let currentQuizQuestionData = null; // Renamed variable
+
+        // Function to populate category dropdown
+        function populateQuizCategories() {
+            fetch("/api/get_trivia_categories")
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success && data.categories) {
+                        quizCategorySelect.innerHTML = 
+                            '<option value="any" selected>Any Category</option>'; // Reset and add default
+                        data.categories.forEach(category => {
+                            const option = document.createElement("option");
+                            option.value = category.id;
+                            option.textContent = category.name;
+                            quizCategorySelect.appendChild(option);
+                        });
+                    } else {
+                        console.error("Failed to load trivia categories:", data.error);
+                        quizFetchStatus.textContent = "Error: Could not load categories.";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching trivia categories:", error);
+                    quizFetchStatus.textContent = "Network error loading categories.";
+                });
+        }
+
+        // Call on page load
+        document.addEventListener("DOMContentLoaded", populateQuizCategories);
 
         fetchQuizQuestionsBtn.addEventListener("click", fetchNewQuizBatch);
         nextQuizQuestionBtn.addEventListener("click", loadNextQuizQuestionFromBatch);
@@ -374,18 +344,18 @@
         function fetchNewQuizBatch() {
             const categoryId = quizCategorySelect.value;
             const difficulty = quizDifficultySelect.value;
-            quizFetchStatus.textContent = `Fetching questions (Category ID: ${categoryId}, Difficulty: ${difficulty})...`;
+            quizFetchStatus.textContent = `Fetching questions (Category: ${quizCategorySelect.options[quizCategorySelect.selectedIndex].text}, Difficulty: ${difficulty})...`;
             fetchQuizQuestionsBtn.disabled = true;
             quizDisplayContentDiv.style.display = "none";
             nextQuizQuestionBtn.style.display = "none";
             quizFeedbackDiv.innerHTML = "";
 
-            fetch(`/api/fetch_quiz_questions?category_id=${categoryId}&difficulty=${difficulty}`)
+            fetch(`/api/fetch_quiz_questions?category=${categoryId}&difficulty=${difficulty}`)
                 .then(response => response.json())
                 .then(data => {
                     fetchQuizQuestionsBtn.disabled = false;
                     if (data.success) {
-                        quizFetchStatus.textContent = `${data.count} questions loaded! Category ID: ${categoryId}, Difficulty: ${difficulty}.`;
+                        quizFetchStatus.textContent = `${data.count} questions loaded! (Category: ${quizCategorySelect.options[quizCategorySelect.selectedIndex].text}, Difficulty: ${difficulty}).`;
                         loadNextQuizQuestionFromBatch(); 
                     } else {
                         quizFetchStatus.textContent = `Error: ${data.error || "Could not fetch questions."}`;
@@ -403,13 +373,14 @@
             quizFeedbackDiv.innerHTML = "";
             quizOptionsDiv.innerHTML = ""; 
             nextQuizQuestionBtn.style.display = "none";
+            quizQuestionImageElem.style.display = "none"; 
             quizQuestionTextElem.textContent = "Loading next question...";
             quizQuestionInfoElem.textContent = "";
 
-            fetch("/api/quiz_question") 
+            fetch("/api/get_quiz_question") 
                 .then(response => response.json())
                 .then(data => {
-                    if (data.error && data.end_of_quiz_batch) {
+                    if (data.error && data.end_of_batch) {
                         quizQuestionTextElem.textContent = data.error;
                         quizOptionsDiv.innerHTML = "";
                         quizFeedbackDiv.innerHTML = "";
@@ -422,13 +393,13 @@
                     }
                     
                     currentQuizQuestionData = data;
-                    quizQuestionTextElem.innerHTML = data.question;
+                    quizQuestionTextElem.innerHTML = data.question; 
                     quizQuestionInfoElem.textContent = `Category: ${data.category} | Difficulty: ${data.difficulty} | Type: ${data.type}`;
 
                     data.options.forEach(option => {
                         const button = document.createElement("button");
-                        button.innerHTML = option;
-                        button.onclick = () => submitQuizAnswer(option);
+                        button.innerHTML = option; 
+                        button.onclick = () => submitQuizAnswer(option); // Renamed function
                         quizOptionsDiv.appendChild(button);
                     });
                 })
@@ -440,13 +411,12 @@
                 });
         }
 
-        function submitQuizAnswer(selectedOption) {
+        function submitQuizAnswer(selectedOption) { // Renamed function
             const isCorrect = selectedOption === currentQuizQuestionData.answer;
-            quizFeedbackDiv.innerHTML = isCorrect 
-                ? `<p class="correct">Correct! The answer is ${currentQuizQuestionData.answer}.</p>` 
-                : `<p class="incorrect">Incorrect. The correct answer was ${currentQuizQuestionData.answer}.</p>`;
+            quizFeedbackDiv.textContent = isCorrect ? "Correct!" : `Incorrect. The correct answer was: ${currentQuizQuestionData.answer}`;
+            quizFeedbackDiv.className = isCorrect ? "correct" : "incorrect";
             
-            // Disable option buttons after answer
+            // Disable option buttons after an answer
             const optionButtons = quizOptionsDiv.getElementsByTagName("button");
             for (let button of optionButtons) {
                 button.disabled = true;
@@ -456,44 +426,6 @@
             }
             nextQuizQuestionBtn.style.display = "block";
         }
-
-        // Update Data Button Logic
-        document.getElementById("update-data-btn").addEventListener("click", function() {
-            const statusDiv = document.getElementById("update-status");
-            statusDiv.textContent = "Updating data... Please wait.";
-            this.disabled = true;
-
-            fetch("/update_data", { method: "POST" })
-                .then(response => response.json())
-                .then(data => {
-                    statusDiv.textContent = data.message;
-                    this.disabled = false;
-                    if (data.success) {
-                        // Optionally, you could trigger a page reload or specific content refresh here
-                        // For now, just a message is fine.
-                        // setTimeout(() => location.reload(), 2000); // Example: reload after 2s
-                    }
-                })
-                .catch(error => {
-                    statusDiv.textContent = "Error updating data: " + error;
-                    this.disabled = false;
-                    console.error("Error updating data:", error);
-                });
-        });
-
-    </script>          .then(data => {
-                    updateStatusDiv.textContent = data.message || "Update process finished. Reload page to see changes.";
-                    // Suggest reloading the page
-                    alert("Data update process finished. Please reload the page to see the latest trivia.");
-                })
-                .catch(error => {
-                    console.error("Error updating data:", error);
-                    updateStatusDiv.textContent = `Error occurred during data update: ${error.message}`;
-                })
-                .finally(() => {
-                    updateDataBtn.disabled = false; // Re-enable button
-                });
-        });
 
     </script>
 </body>
