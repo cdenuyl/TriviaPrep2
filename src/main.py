@@ -164,7 +164,7 @@ def search_trivia_by_category():
             elif data.get("response_code") == 5: 
                 error_message = "You\'re requesting questions too frequently from the API for category search. Please wait and try again."
             else: 
-                error_message = f"An unknown error occurred with the Trivia API (Code: {data.get("response_code")}) for category search."
+                error_message = f"An unknown error occurred with the Trivia API (Code: {data.get(\'response_code\')}) for category search."
             # Return as a list with a single error string to match expected format of search results
             return jsonify([error_message]) 
 
