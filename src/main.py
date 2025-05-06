@@ -394,33 +394,33 @@ def get_quiz_question():
         
     return jsonify(question)
 
-if __name__ == "__main__": Test the search_category function
-    print("--- Testing search_category with query: colors ---")
-    with app.test_request_context("/search_category?query=colors"):
-        response_colors = search_category()
-        try:
-            print(json.dumps(response_colors.get_json(), indent=2))
-        except Exception as e:
-            print(f"Error printing JSON for colors: {e}")
-            print(response_colors.data.decode())
-
-    print("\n--- Testing search_category with query: world capitals ---")
-    with app.test_request_context("/search_category?query=world capitals"):
-        response_capitals = search_category()
-        try:
-            print(json.dumps(response_capitals.get_json(), indent=2))
-        except Exception as e:
-            print(f"Error printing JSON for world capitals: {e}")
-            print(response_capitals.data.decode())
-    
-    print("\n--- Testing search_category with query: science facts ---")
-    with app.test_request_context("/search_category?query=science facts"):
-        response_science = search_category()
-        try:
-            print(json.dumps(response_science.get_json(), indent=2))
-        except Exception as e:
-            print(f"Error printing JSON for science facts: {e}")
-            print(response_science.data.decode())
-
-    # print("Starting Flask app...") # Comment out app.run for testing search
-    # app.run(host="0.0.0.0", port=5000, debug=True)
+# if __name__ == "__main__": # Test the search_category function
+#     print("--- Testing search_category with query: colors ---")
+#     with app.test_request_context("/search_category?query=colors"):
+#         response_colors = search_category()
+#         try:
+#             print(json.dumps(response_colors.get_json(), indent=2))
+#         except Exception as e:
+#             print(f"Error printing JSON for colors: {e}")
+#             print(response_colors.data.decode())
+# 
+#     print("\n--- Testing search_category with query: world capitals ---")
+#     with app.test_request_context("/search_category?query=world capitals"):
+#         response_capitals = search_category()
+#         try:
+#             print(json.dumps(response_capitals.get_json(), indent=2))
+#         except Exception as e:
+#             print(f"Error printing JSON for world capitals: {e}")
+#             print(response_capitals.data.decode())
+#     
+#     print("\n--- Testing search_category with query: science facts ---")
+#     with app.test_request_context("/search_category?query=science facts"):
+#         response_science = search_category()
+#         try:
+#             print(json.dumps(response_science.get_json(), indent=2))
+#         except Exception as e:
+#             print(f"Error printing JSON for science facts: {e}")
+#             print(response_science.data.decode())
+# 
+#     # print("Starting Flask app...") # Comment out app.run for testing search
+#     # app.run(host="0.0.0.0", port=5000, debug=True)
