@@ -156,7 +156,7 @@ def search_trivia_by_category():
                  return jsonify([f"No trivia questions found for the selected criteria in category ID {category_id}. Try a different difficulty or category."])
             return jsonify(processed_questions)
         else:
-            error_message = f"OpenTDB API Error (Code: {data.get("response_code")}) for category search: "
+            error_message = f"OpenTDB API Error (Code: {data.get('response_code')}) for category search: "
             if data.get("response_code") == 1: 
                 error_message = f"The API doesn\'t have enough questions for category ID {category_id} with difficulty \'{difficulty}\'. Please try different options."
             elif data.get("response_code") == 2: 
