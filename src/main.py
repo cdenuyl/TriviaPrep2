@@ -139,10 +139,12 @@ def fetch_quiz_questions_from_api():
             if not processed_questions:
                 session["current_quiz_batch"] = []
                 session["seen_in_batch_questions"] = []
+                session.modified = True # Ensure session is saved
                 return jsonify({"success": False, "error": "The API returned no questions for your selected criteria. Please try different options."}), 200
             
             session["current_quiz_batch"] = processed_questions
             session["seen_in_batch_questions"] = []
+            session.modified = True # Ensure session is saved
             return jsonify({"success": True, "message": f"{len(processed_questions)} questions fetched successfully.", "count": len(processed_questions)})
         else:
             error_message = f"OpenTDB API Error (Code: {data.get('response_code')}): "
@@ -173,6 +175,7 @@ def get_quiz_question():
     question = random.choice(available_questions)
     seen_in_batch_ids.append(question.get("id"))
     session["seen_in_batch_questions"] = seen_in_batch_ids
+    session.modified = True # Ensure session is saved
     question["image_url"] = None # OpenTDB is text-based
     return jsonify(question)
 

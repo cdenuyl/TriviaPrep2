@@ -7,9 +7,7 @@
     - [X] Modify `/api/fetch_quiz_questions` to accept `category` (ID) and `difficulty` parameters.
     - [X] Update `/api/fetch_quiz_questions` to use the new `category` parameter in the OpenTDB API call.
     - [X] Rename route `/geo_quiz/question` to `/api/get_quiz_question`.
-    - [X] Ensure `/api/get_quiz_question` correctly serves questions from the batch fetched by `/api/fetch_quiz_questions`.
-    - [X] Rename session keys from `current_geo_quiz_batch` and `seen_in_batch_geo_questions` to `current_quiz_batch` and `seen_in_batch_questions` respectively.
-  - [X] **Frontend (`src/index.html`):**
+    - [X] Ensure `/api/get_quiz_question` correctly serves questions from the batch fetched by `/api/fetch_quiz_questions`. Added `session.modified = True` to ensure session changes for quiz batch and seen questions are saved.
     - [X] Verify/Add a category selection dropdown (e.g., `id="quiz-category"`) in the Trivia Quiz section.
     - [X] Write JavaScript to call `/api/get_trivia_categories` on page load (or when quiz section becomes visible).
     - [X] Populate the `quiz-category` dropdown with the fetched categories.
