@@ -5,6 +5,10 @@ import random
 import requests
 import html # Import the html module
 from flask import Flask, render_template, jsonify, request, session
+# from bs4 import BeautifulSoup # Removed for free-text search removal
+# from duckduckgo_search import DDGS # Removed for free-text search removal
+# import nltk # Removed for free-text search removal
+# import re # Removed for free-text search removal
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
@@ -14,6 +18,8 @@ app.secret_key = os.urandom(24)
 DATA_FILE = os.path.join(app.static_folder, "trivia_data.json")
 OPENTDB_API_URL = "https://opentdb.com/api.php"
 OPENTDB_CATEGORIES_URL = "https://opentdb.com/api_category.php"
+
+# NLTK download block removed as NLTK is no longer used
 
 def load_data(filepath):
     try:
@@ -54,20 +60,21 @@ def index():
                            golf_news=golf_news)
 
 @app.route("/update_data", methods=["POST"])
-def update_data_route(): # Renamed to avoid conflict with function name 'update_data'
+def update_data_route():
     script_path = os.path.join(os.path.dirname(__file__), "..", "process_data.py")
-    venv_python = os.path.join(os.path.dirname(__file__), "..", "venv", "bin", "python3.11")
+    # Simplified python executable call, assuming python3.11 is in PATH or using a direct alias
+    # This was causing issues with venv pathing in some contexts.
+    # Render typically uses the python version specified in its settings.
+    python_executable = "python3.11"
     project_dir = os.path.dirname(os.path.dirname(__file__))
     
     if not os.path.exists(script_path):
         return jsonify({"success": False, "message": "Processing script not found."}), 500
 
-    if not os.path.exists(venv_python):
-         venv_python = "python3.11"
-
     try:
-        print(f"Running update script: {venv_python} {script_path} in {project_dir}")
-        result = os.system(f"cd \"{project_dir}\" && \"{venv_python}\" \"{script_path}\"") 
+        print(f"Running update script: {python_executable} {script_path} in {project_dir}")
+        # Ensure the command is executed from the project directory context
+        result = os.system(f"cd \"{project_dir}\" && {python_executable} \"{script_path}\"") 
         if result == 0:
             return jsonify({"success": True, "message": "Trivia data refreshed successfully."})
         else:
@@ -76,10 +83,8 @@ def update_data_route(): # Renamed to avoid conflict with function name 'update_
         print(f"Error running update script: {e}")
         return jsonify({"success": False, "message": f"Error running update script: {e}"}), 500
 
-# --- Start: Updated Trivia Quiz API Endpoints ---
 @app.route("/api/get_trivia_categories", methods=["GET"])
 def get_trivia_categories():
-    """Fetches all trivia categories from OpenTDB."""
     try:
         response = requests.get(OPENTDB_CATEGORIES_URL, timeout=10)
         response.raise_for_status()
@@ -97,11 +102,10 @@ def get_trivia_categories():
 
 @app.route("/api/fetch_quiz_questions", methods=["GET"])
 def fetch_quiz_questions_from_api():
-    """Fetches quiz questions from OpenTDB API based on category and difficulty."""
     amount = 50
-    category_id = request.args.get("category") # Expecting category ID
+    category_id = request.args.get("category")
     difficulty = request.args.get("difficulty", "any")
-    q_type = request.args.get("type", "any") # Retain type flexibility, default to any
+    q_type = request.args.get("type", "any")
 
     params = {"amount": amount}
     if category_id and category_id.lower() != "any" and category_id.isdigit():
@@ -139,7 +143,7 @@ def fetch_quiz_questions_from_api():
             if not processed_questions:
                 session["current_quiz_batch"] = []
                 session["seen_in_batch_questions"] = []
-                session.modified = True # Ensure session is saved
+                session.modified = True
                 return jsonify({"success": False, "error": "The API returned no questions for your selected criteria. Please try different options."}), 200
             
             session["current_quiz_batch"] = processed_questions
@@ -147,21 +151,25 @@ def fetch_quiz_questions_from_api():
             session.modified = True # Ensure session is saved
             return jsonify({"success": True, "message": f"{len(processed_questions)} questions fetched successfully.", "count": len(processed_questions)})
         else:
-            error_message = f"OpenTDB API Error (Code: {data.get('response_code')}): "
-            if data.get("response_code") == 1: error_message += "Not enough questions for your query."
-            elif data.get("response_code") == 2: error_message += "Invalid API parameter."
-            elif data.get("response_code") == 5: error_message += "Rate limit exceeded. Please wait ~5 seconds."
-            else: error_message += "Unknown API error."
+            response_code_val = data.get('response_code')
+            error_message = f"OpenTDB API Error (Code: {response_code_val}): "
+            if response_code_val == 1:
+                error_message += "Not enough questions for your query."
+            elif response_code_val == 2:
+                error_message += "Invalid API parameter."
+            elif response_code_val == 5: # Specific check for rate limit
+                error_message += "Rate limit exceeded. Please wait ~5 seconds."
+            else:
+                error_message += "Unknown API error."
             return jsonify({"success": False, "error": error_message}), 500
 
     except requests.exceptions.RequestException as e:
         return jsonify({"success": False, "error": f"Failed to fetch questions from OpenTDB: {e}"}), 500
-    except Exception as e:
+    except Exception as e: # Catch any other unexpected errors
         return jsonify({"success": False, "error": f"An unexpected error occurred: {e}"}), 500
 
 @app.route("/api/get_quiz_question", methods=["GET"])
 def get_quiz_question():
-    """Gets a random quiz question from the current fetched batch."""
     current_batch = session.get("current_quiz_batch", [])
     if not current_batch:
         return jsonify({"error": "No questions fetched yet. Please fetch a new set.", "end_of_batch": True}), 404
@@ -176,25 +184,10 @@ def get_quiz_question():
     seen_in_batch_ids.append(question.get("id"))
     session["seen_in_batch_questions"] = seen_in_batch_ids
     session.modified = True # Ensure session is saved
-    question["image_url"] = None # OpenTDB is text-based
+    question["image_url"] = None # No images for API questions for now
     return jsonify(question)
 
-# --- End: Updated Trivia Quiz API Endpoints ---
-
-# --- Start: Category Search (Free Text - Placeholder for future implementation) ---
-@app.route("/api/search_trivia_freetext", methods=["GET"])
-def search_trivia_freetext():
-    query = request.args.get("query", "")
-    if not query:
-        return jsonify({"error": "Query parameter is missing"}), 400
-
-    # Placeholder for Option C: Experimental Web Search
-    # This will be implemented in a later step as per the plan.
-    print(f"Received free-text search query: {query}. Implementation pending.")
-    # For now, return a message indicating it's not yet implemented or a dummy response.
-    return jsonify([f"Free-text search for \"{query}\" is under development. Please check back later."])
-# --- End: Category Search ---
-
+# Free-text search API endpoint and helper functions have been removed.
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

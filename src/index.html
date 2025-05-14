@@ -193,20 +193,10 @@
             {% endif %}
         </section>
 
-        <!-- Category Search -->
-        <section id="category-search-section"> <!-- Renamed ID -->
-            <h2>Category Search</h2>
-            <form id="category-search-form"> <!-- Renamed ID -->
-                <input type="text" id="category-search-input" placeholder="Enter any topic (e.g., Dinosaurs, 80s Music)" required>
-                <button type="submit">Search Trivia</button>
-            </form>
-            <div id="category-search-results">
-                <!-- Search results will be displayed here -->
-            </div>
-        </section>
+        <!-- Category Search Section Removed -->
 
         <!-- Trivia Quiz (Powered by OpenTDB) -->
-        <section id="trivia-quiz-section"> <!-- Renamed ID -->
+        <section id="trivia-quiz-section">
             <h2>Trivia Quiz (Powered by OpenTDB)</h2>
             <div id="quiz-controls">
                 <label for="quiz-category">Select Category:</label>
@@ -225,7 +215,7 @@
                 <p id="quiz-fetch-status"></p>
             </div>
             <div id="quiz-content" style="display: none;">
-                <div id="quiz-question-area"> <!-- Renamed ID -->
+                <div id="quiz-question-area">
                     <p id="quiz-question-text"></p>
                     <p id="quiz-question-info" style="font-size: 0.9em; color: #555;"></p>
                     <img id="quiz-question-image" src="" alt="Quiz Image" style="display: none;"/>
@@ -262,38 +252,7 @@
                 });
         });
 
-        // Category Search Logic (Free Text - to be implemented with Option C)
-        document.getElementById("category-search-form").addEventListener("submit", function(event) {
-            event.preventDefault(); 
-            const query = document.getElementById("category-search-input").value;
-            const resultsDiv = document.getElementById("category-search-results");
-            resultsDiv.innerHTML = `<p>Searching for trivia on \"${query}\"... (Experimental)</p>`;
-
-            // This will call the new /api/search_trivia_freetext endpoint
-            fetch(`/api/search_trivia_freetext?query=${encodeURIComponent(query)}`)
-                .then(response => {
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    return response.json();
-                })
-                .then(data => {
-                    resultsDiv.innerHTML = ""; 
-                    if (data && data.length > 0) {
-                        const list = document.createElement("ul");
-                        data.forEach(item => {
-                            const listItem = document.createElement("li");
-                            listItem.textContent = item; 
-                            list.appendChild(listItem);
-                        });
-                        resultsDiv.appendChild(list);
-                    } else {
-                        resultsDiv.innerHTML = `<p>No trivia results found for \"${query}\".</p>`;
-                    }
-                })
-                .catch(error => {
-                    console.error("Error fetching category search results:", error);
-                    resultsDiv.innerHTML = "<p>Error fetching trivia results. Please try again later.</p>";
-                });
-        });
+        // Category Search JavaScript Logic Removed
 
         // Trivia Quiz Logic (All Categories API Based)
         const fetchQuizQuestionsBtn = document.getElementById("fetch-quiz-questions-btn");
@@ -301,14 +260,14 @@
         const quizDifficultySelect = document.getElementById("quiz-difficulty");
         const quizFetchStatus = document.getElementById("quiz-fetch-status");
         
-        const quizDisplayContentDiv = document.getElementById("quiz-content"); // Renamed variable for clarity
+        const quizDisplayContentDiv = document.getElementById("quiz-content");
         const quizQuestionTextElem = document.getElementById("quiz-question-text");
         const quizQuestionInfoElem = document.getElementById("quiz-question-info");
         const quizQuestionImageElem = document.getElementById("quiz-question-image");
         const quizOptionsDiv = document.getElementById("quiz-options");
         const quizFeedbackDiv = document.getElementById("quiz-feedback");
         const nextQuizQuestionBtn = document.getElementById("next-quiz-question-btn");
-        let currentQuizQuestionData = null; // Renamed variable
+        let currentQuizQuestionData = null;
 
         // Function to populate category dropdown
         function populateQuizCategories() {
@@ -369,64 +328,66 @@
         }
 
         function loadNextQuizQuestionFromBatch() {
-            quizDisplayContentDiv.style.display = "block";
             quizFeedbackDiv.innerHTML = "";
             quizOptionsDiv.innerHTML = ""; 
             nextQuizQuestionBtn.style.display = "none";
-            quizQuestionImageElem.style.display = "none"; 
-            quizQuestionTextElem.textContent = "Loading next question...";
-            quizQuestionInfoElem.textContent = "";
 
-            fetch("/api/get_quiz_question") 
+            fetch("/api/get_quiz_question")
                 .then(response => response.json())
                 .then(data => {
-                    if (data.error && data.end_of_batch) {
+                    if (data.error) {
                         quizQuestionTextElem.textContent = data.error;
-                        quizOptionsDiv.innerHTML = "";
-                        quizFeedbackDiv.innerHTML = "";
-                        nextQuizQuestionBtn.style.display = "none";
-                        quizFetchStatus.textContent = "All questions in this batch answered. Fetch a new set!";
-                        fetchQuizQuestionsBtn.disabled = false;
+                        quizQuestionInfoElem.textContent = "";
+                        quizDisplayContentDiv.style.display = "block"; 
+                        quizQuestionImageElem.style.display = "none";
+                        currentQuizQuestionData = null;
+                        if (data.end_of_batch) {
+                            quizFetchStatus.textContent = data.error; // Update status too
+                        }
                         return;
-                    } else if (data.error) {
-                        throw new Error(data.error);
                     }
-                    
                     currentQuizQuestionData = data;
-                    quizQuestionTextElem.innerHTML = data.question; 
-                    quizQuestionInfoElem.textContent = `Category: ${data.category} | Difficulty: ${data.difficulty} | Type: ${data.type}`;
+                    quizQuestionTextElem.innerHTML = data.question; // Use innerHTML for unescaped entities
+                    quizQuestionInfoElem.textContent = `Category: ${data.category} | Difficulty: ${data.difficulty}`;
+                    
+                    quizQuestionImageElem.style.display = "none"; // Hide by default
+                    if (data.image_url) { // Check if there is an image_url
+                        quizQuestionImageElem.src = data.image_url;
+                        quizQuestionImageElem.alt = data.question; // Set alt text
+                        quizQuestionImageElem.style.display = "block";
+                    }
 
                     data.options.forEach(option => {
                         const button = document.createElement("button");
-                        button.innerHTML = option; 
-                        button.onclick = () => submitQuizAnswer(option); // Renamed function
+                        button.innerHTML = option; // Use innerHTML for unescaped entities
+                        button.addEventListener("click", () => handleQuizAnswer(option));
                         quizOptionsDiv.appendChild(button);
                     });
+                    quizDisplayContentDiv.style.display = "block";
                 })
                 .catch(error => {
-                    console.error("Error fetching/displaying quiz question:", error);
-                    quizQuestionTextElem.textContent = `Error loading question: ${error.message}. Try fetching a new set.`;
-                    quizFetchStatus.textContent = `Error: ${error.message}. Try fetching a new set.`;
-                    fetchQuizQuestionsBtn.disabled = false;
+                    quizQuestionTextElem.textContent = "Error loading next question.";
+                    console.error("Error loading next quiz question:", error);
                 });
         }
 
-        function submitQuizAnswer(selectedOption) { // Renamed function
+        function handleQuizAnswer(selectedOption) {
+            if (!currentQuizQuestionData) return;
+
             const isCorrect = selectedOption === currentQuizQuestionData.answer;
             quizFeedbackDiv.textContent = isCorrect ? "Correct!" : `Incorrect. The correct answer was: ${currentQuizQuestionData.answer}`;
             quizFeedbackDiv.className = isCorrect ? "correct" : "incorrect";
-            
+
             // Disable option buttons after an answer
             const optionButtons = quizOptionsDiv.getElementsByTagName("button");
             for (let button of optionButtons) {
                 button.disabled = true;
-                if (button.innerHTML === currentQuizQuestionData.answer) {
-                    button.style.backgroundColor = "lightgreen"; // Highlight correct answer
+                if (button.textContent === currentQuizQuestionData.answer) {
+                    button.style.backgroundColor = "#90ee90"; // Highlight correct answer
                 }
             }
             nextQuizQuestionBtn.style.display = "block";
         }
-
     </script>
 </body>
 </html>

@@ -1,97 +1,17 @@
-# Current Events (Updated May 5, 2025)
-
-This section provides a summary of recent world news events.
-
-**Headline:** [Children Suffer From Malnutrition as Israel’s Blockade of Gaza Continues](https://www.nytimes.com/video/world/middleeast/100000010146471/gaza-israel-middle-east-hunger.html)
-*   **Date:** 
-*   **Summary:** It has been over 60 days since Israel ordered a halt to all humanitarian aid entering Gaza. Israel says the siege will continue until Hamas releases all of its hostages.
+**Headline:** [Trump arrives in Saudi Arabia, sets new course for American policy in Middle East](https://www.pbs.org/newshour/show/may-13-2025-pbs-news-hour-full-episode)
+**Summary:** From PBS News Hour (May 13, 2025): Trump's visit to Saudi Arabia marks a significant shift in American foreign policy in the Middle East, focusing on new economic and defense deals.
 ---
-**Headline:** [Monday Briefing: Inside Australia’s Election](https://www.nytimes.com/2025/05/04/briefing/australia-election-albanese-dutton.html)
-*   **Date:** 
-*   **Summary:** Plus, analyzing a scene in “Sinners.”
+**Headline:** [White House terminates $450 million in grants to Harvard](https://www.pbs.org/newshour/show/may-13-2025-pbs-news-hour-full-episode)
+**Summary:** From PBS News Hour (May 13, 2025): The White House has cut $450 million in federal grants previously allocated to Harvard University.
 ---
-**Headline:** [80 Years After Dachau Concentration Camp Liberation, Witnesses Remember](https://www.nytimes.com/2025/05/04/world/europe/dachau-liberation-anniversary.html)
-*   **Date:** 
-*   **Summary:** The anniversary of the end of the Nazi era comes at a pivotal time for Germans. The last of the survivors, liberators and perpetrators are dying, as the far right is becoming more established.
+**Headline:** [Pakistan-India fighter jet “dog fight” one of largest in recent history](https://www.cnn.com/world/live-news/india-pakistan-attack-kashmir-tourists-intl-hnk)
+**Summary:** From CNN (May 7, 2025): Tensions escalate as India and Pakistan engage in a significant aerial confrontation over Kashmir, with both sides reporting casualties and downed aircraft. India targeted alleged terrorist infrastructure.
 ---
-**Headline:** [Sudan’s Army Says Paramilitary Forces Struck Civilian Targets](https://www.nytimes.com/2025/05/04/world/africa/sudan-port-sudan-attacks.html)
-*   **Date:** 
-*   **Summary:** The strikes targeted an airport, a warehouse and several civilian facilities in the eastern city of Port Sudan, the army said.
+**Headline:** [US explores normalizing relations with Syria after Trump meets new leader](https://www.cnn.com/2025/05/14/us/5-things-to-know-for-may-14-syria-gaza-immigration-afghanistan-flooding)
+**Summary:** From CNN (May 14, 2025): President Trump announced plans to lift sanctions on Syria and is exploring normalizing relations following a meeting with Ahmad al-Sharaa, who took power after the Assad regime.
 ---
-**Headline:** [A Conclave Like No Other](https://www.nytimes.com/2025/05/04/world/europe/pope-conclave-cardinals.html)
-*   **Date:** 
-*   **Summary:** More cardinals from more countries than ever will gather in the Sistine Chapel starting Wednesday to choose a new pope at a precarious time for the church.
+**Headline:** [Israel launches airstrike on Gaza hospital targeting Hamas leader](https://www.cnn.com/2025/05/14/us/5-things-to-know-for-may-14-syria-gaza-immigration-afghanistan-flooding)
+**Summary:** From CNN (May 14, 2025): An Israeli airstrike targeted a hospital in southern Gaza, aiming for Hamas leader Mohammed Sinwar. The Palestinian Ministry of Health reported casualties.
 ---
-**Headline:** [Francis Opened Discussions to Those Outside the Church Hierarchy. This Cardinal Would, Too](https://www.nytimes.com/2025/05/04/world/europe/pope-conclave-cardinal-mario-grech.html)
-*   **Date:** 
-*   **Summary:** Cardinal Mario Grech comes from Malta, but is known to cardinals around the world for his role as the secretary general of an advisory body of bishops.
----
-**Headline:** [A Popemobile Will Ride Again, This Time Into Gaza](https://www.nytimes.com/2025/05/04/world/middleeast/pope-francis-gaza-popemobile-clinic.html)
-*   **Date:** 
-*   **Summary:** In his last months, Pope Francis blessed an effort to transform the vehicle he used when he visited the West Bank in 2014 into a mobile health clinic to treat Palestinian children in the Gaza Strip.
----
-**Headline:** [Houthi Missile Hits Near Tel Aviv Airport](https://www.nytimes.com/2025/05/04/world/middleeast/houthi-missile-tel-aviv-airport.html)
-*   **Date:** 
-*   **Summary:** Some international airlines suspended flights, and Israel’s prime minister, Benjamin Netanyahu, threatened to retaliate.
----
-**Headline:** [Israel Mobilizes Two Reserve Soldiers](https://www.nytimes.com/2025/05/03/world/middleeast/israel-mobilizes-reservists-gaza.html)
-*   **Date:** 
-*   **Summary:** The mobilization could indicate that Israel is preparing to shift its tactics in its fight against Hamas.
----
-**Headline:** [Oil Prices Are Falling. Here’s Where That Could Spell Trouble.](https://www.nytimes.com/2025/05/03/world/europe/oil-prices-tariffs.html)
-*   **Date:** 
-*   **Summary:** For countries that depend heavily on oil revenue, dropping prices are worrisome.
----
-**Headline:** [Australia’s Prime Minister Wins Second Term](https://www.nytimes.com/video/world/australia/100000010145485/australia-election-prime-minister-albanese-dutton.html)
-*   **Date:** 
-*   **Summary:** Prime Minister Anthony Albanese of Australia won in a resounding defeat of the conservative opposition led by Peter Dutton.
----
-**Headline:** [Ukraine Rejects Russian Call for a Three-Day Cease-Fire](https://www.nytimes.com/2025/05/03/world/europe/ukraine-russia-ceasefire-talks.html)
-*   **Date:** 
-*   **Summary:** President Volodymyr Zelensky called the proposal a “theatrical show” and said such a short truce would not bolster negotiations for a lasting peace.
----
-**Headline:** [Hikers Stumble Upon a Pile of Gold Coins, Igniting a Historical Hunt](https://www.nytimes.com/2025/05/03/world/europe/czech-treasure-gold-discovery.html)
-*   **Date:** 
-*   **Summary:** The discovery of coins and jewelry in the Czech Republic worth up to $680,000 raises a tantalizing mystery for historians and amateur sleuths: Who buried the treasure?
----
-**Headline:** [‘We’re All in One Ship’: Druse in Syrian Town Rocked by Violence Agree to Disarm Militias](https://www.nytimes.com/2025/05/03/world/middleeast/syria-druse-sectarian-violence.html)
-*   **Date:** 
-*   **Summary:** After this week’s bloodshed, Druse leaders in Ashrafieh Sahnaya agreed to integrate militia fighters into government forces. But some residents remain wary.
----
-**Headline:** [Cardinal Parolin, Leader of Papal Conclave, Is Also a Top Candidate](https://www.nytimes.com/2025/05/03/world/europe/pope-conclave-cardinal-pietro-parolin.html)
-*   **Date:** 
-*   **Summary:** Cardinals have talked about Cardinal Pietro Parolin, the Vatican secretary of state, as someone who could have a steady, bureaucratic hand on the church’s wheel.
----
-**Headline:** [After Leading a Liberal Comeback, Carney Hits the Ground Running](https://www.nytimes.com/2025/05/03/world/canada/carney-new-government.html)
-*   **Date:** 
-*   **Summary:** The prime minister will begin broad economic and security talks with President Trump next week and has set a timetable for his new government.
----
-**Headline:** [These Contentious Issues Could Determine Who Becomes the Next Pope](https://www.nytimes.com/2025/05/03/world/europe/pope-conclave-contentious-issues.html)
-*   **Date:** 
-*   **Summary:** As cardinals gather to elect Pope Francis’ successor, they are facing debates over whether the church most needs change or constancy.
----
-**Headline:** [As China Looks for Way Out of U.S. Trade Deadlock, Fentanyl Could Be Key](https://www.nytimes.com/2025/05/03/world/asia/us-china-tariffs-fentanyl.html)
-*   **Date:** 
-*   **Summary:** Chinese officials have long used their willingness to cooperate to stem the flow of fentanyl to the United States as leverage in talks over broader disputes.
----
-**Headline:** [Visual Analysis Shows U.S. Likely Bombed Yemen Migrant Detention Center](https://www.nytimes.com/video/world/middleeast/100000010137049/us-bombing-yemen-migrant-shelter.html)
-*   **Date:** 
-*   **Summary:** Videos and photos reveal remnants of at least three U.S.-made GBU-39 bombs at the site of an April 28 attack. The strike killed 68 African migrants, according to the Houthis, a militant group that controls northern Yemen.
----
-**Headline:** [The Frightening Precedents for Trump’s ‘Legal Abyss’](https://www.nytimes.com/2025/05/03/world/trump-dual-state.html)
-*   **Date:** 
-*   **Summary:** The ‘dual-state theory’ explains how authoritarians bend the law to their will.
----
-**Headline:** [The Americans Who Left](https://www.nytimes.com/2025/05/03/world/canada/vietnam-war-opponents-canada-america.html)
-*   **Date:** 
-*   **Summary:** Some of the United States’ Vietnam War opponents found refuge in Canada. Fifty years after the end of the war, they’re still worried about the future.
----
-**Headline:** [Ghana Wanted a Cathedral. It Got an ‘Expensive Hole’ Instead.](https://www.nytimes.com/2025/05/03/world/africa/ghana-cathedral-christian-corruption-hole.html)
-*   **Date:** 
-*   **Summary:** The nation had grand plans for a national cathedral designed by a celebrity architect. The $400 million project became a political battleground.
----
-**Headline:** [Message From the Russian Military: ‘We Lost Your Son’](https://www.nytimes.com/2025/05/03/world/europe/russia-missing-soldiers-ukraine-war.html)
-*   **Date:** 
-*   **Summary:** Russia lacks any formal, organized effort to account for legions of missing soldiers. That often leaves relatives in limbo, fending for themselves with scant government information.
----
-
+**Headline:** [European leaders prepare more sanctions on Russia if Ukraine ceasefire talks fail](https://www.theguardian.com/world/2025/may/14/ukraine-war-briefing-europe-ready-with-sanctions-if-no-ceasefire-after-istanbul-talks)
+**Summary:** From The Guardian (May 14, 2025): European leaders signal readiness to impose further sanctions on Russia if upcoming talks in Turkey do not result in a ceasefire in Ukraine.

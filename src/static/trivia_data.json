@@ -1,282 +1,163 @@
 {
   "events": [
     {
-      "headline": "Monday Briefing: Inside Australia\u2019s Election",
-      "url": "https://www.nytimes.com/2025/05/04/briefing/australia-election-albanese-dutton.html",
-      "summary": "Plus, analyzing a scene in \u201cSinners.\u201d",
+      "headline": "Trump arrives in Saudi Arabia, sets new course for American policy in Middle East",
+      "url": "https://www.pbs.org/newshour/show/may-13-2025-pbs-news-hour-full-episode",
+      "summary": "From PBS News Hour (May 13, 2025): Trump's visit to Saudi Arabia marks a significant shift in American foreign policy in the Middle East, focusing on new economic and defense deals.",
       "date": "May 3-5, 2025"
     },
     {
-      "headline": "80 Years After Dachau Concentration Camp Liberation, Witnesses Remember",
-      "url": "https://www.nytimes.com/2025/05/04/world/europe/dachau-liberation-anniversary.html",
-      "summary": "The anniversary of the end of the Nazi era comes at a pivotal time for Germans. The last of the survivors, liberators and perpetrators are dying, as the far right is becoming more established.",
+      "headline": "White House terminates $450 million in grants to Harvard",
+      "url": "https://www.pbs.org/newshour/show/may-13-2025-pbs-news-hour-full-episode",
+      "summary": "From PBS News Hour (May 13, 2025): The White House has cut $450 million in federal grants previously allocated to Harvard University.",
       "date": "May 3-5, 2025"
     },
     {
-      "headline": "Sudan\u2019s Army Says Paramilitary Forces Struck Civilian Targets",
-      "url": "https://www.nytimes.com/2025/05/04/world/africa/sudan-port-sudan-attacks.html",
-      "summary": "The strikes targeted an airport, a warehouse and several civilian facilities in the eastern city of Port Sudan, the army said.",
+      "headline": "Pakistan-India fighter jet \u201cdog fight\u201d one of largest in recent history",
+      "url": "https://www.cnn.com/world/live-news/india-pakistan-attack-kashmir-tourists-intl-hnk",
+      "summary": "From CNN (May 7, 2025): Tensions escalate as India and Pakistan engage in a significant aerial confrontation over Kashmir, with both sides reporting casualties and downed aircraft. India targeted alleged terrorist infrastructure.",
       "date": "May 3-5, 2025"
     },
     {
-      "headline": "A Conclave Like No Other",
-      "url": "https://www.nytimes.com/2025/05/04/world/europe/pope-conclave-cardinals.html",
-      "summary": "More cardinals from more countries than ever will gather in the Sistine Chapel starting Wednesday to choose a new pope at a precarious time for the church.",
+      "headline": "US explores normalizing relations with Syria after Trump meets new leader",
+      "url": "https://www.cnn.com/2025/05/14/us/5-things-to-know-for-may-14-syria-gaza-immigration-afghanistan-flooding",
+      "summary": "From CNN (May 14, 2025): President Trump announced plans to lift sanctions on Syria and is exploring normalizing relations following a meeting with Ahmad al-Sharaa, who took power after the Assad regime.",
       "date": "May 3-5, 2025"
     },
     {
-      "headline": "Francis Opened Discussions to Those Outside the Church Hierarchy. This Cardinal Would, Too",
-      "url": "https://www.nytimes.com/2025/05/04/world/europe/pope-conclave-cardinal-mario-grech.html",
-      "summary": "Cardinal Mario Grech comes from Malta, but is known to cardinals around the world for his role as the secretary general of an advisory body of bishops.",
+      "headline": "Israel launches airstrike on Gaza hospital targeting Hamas leader",
+      "url": "https://www.cnn.com/2025/05/14/us/5-things-to-know-for-may-14-syria-gaza-immigration-afghanistan-flooding",
+      "summary": "From CNN (May 14, 2025): An Israeli airstrike targeted a hospital in southern Gaza, aiming for Hamas leader Mohammed Sinwar. The Palestinian Ministry of Health reported casualties.",
       "date": "May 3-5, 2025"
     },
     {
-      "headline": "A Popemobile Will Ride Again, This Time Into Gaza",
-      "url": "https://www.nytimes.com/2025/05/04/world/middleeast/pope-francis-gaza-popemobile-clinic.html",
-      "summary": "In his last months, Pope Francis blessed an effort to transform the vehicle he used when he visited the West Bank in 2014 into a mobile health clinic to treat Palestinian children in the Gaza Strip.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "Houthi Missile Hits Near Tel Aviv Airport",
-      "url": "https://www.nytimes.com/2025/05/04/world/middleeast/houthi-missile-tel-aviv-airport.html",
-      "summary": "Some international airlines suspended flights, and Israel\u2019s prime minister, Benjamin Netanyahu, threatened to retaliate.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "Israel Mobilizes Two Reserve Soldiers",
-      "url": "https://www.nytimes.com/2025/05/03/world/middleeast/israel-mobilizes-reservists-gaza.html",
-      "summary": "The mobilization could indicate that Israel is preparing to shift its tactics in its fight against Hamas.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "Oil Prices Are Falling. Here\u2019s Where That Could Spell Trouble.",
-      "url": "https://www.nytimes.com/2025/05/03/world/europe/oil-prices-tariffs.html",
-      "summary": "For countries that depend heavily on oil revenue, dropping prices are worrisome.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "Australia\u2019s Prime Minister Wins Second Term",
-      "url": "https://www.nytimes.com/video/world/australia/100000010145485/australia-election-prime-minister-albanese-dutton.html",
-      "summary": "Prime Minister Anthony Albanese of Australia won in a resounding defeat of the conservative opposition led by Peter Dutton.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "Ukraine Rejects Russian Call for a Three-Day Cease-Fire",
-      "url": "https://www.nytimes.com/2025/05/03/world/europe/ukraine-russia-ceasefire-talks.html",
-      "summary": "President Volodymyr Zelensky called the proposal a \u201ctheatrical show\u201d and said such a short truce would not bolster negotiations for a lasting peace.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "Hikers Stumble Upon a Pile of Gold Coins, Igniting a Historical Hunt",
-      "url": "https://www.nytimes.com/2025/05/03/world/europe/czech-treasure-gold-discovery.html",
-      "summary": "The discovery of coins and jewelry in the Czech Republic worth up to $680,000 raises a tantalizing mystery for historians and amateur sleuths: Who buried the treasure?",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "\u2018We\u2019re All in One Ship\u2019: Druse in Syrian Town Rocked by Violence Agree to Disarm Militias",
-      "url": "https://www.nytimes.com/2025/05/03/world/middleeast/syria-druse-sectarian-violence.html",
-      "summary": "After this week\u2019s bloodshed, Druse leaders in Ashrafieh Sahnaya agreed to integrate militia fighters into government forces. But some residents remain wary.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "Cardinal Parolin, Leader of Papal Conclave, Is Also a Top Candidate",
-      "url": "https://www.nytimes.com/2025/05/03/world/europe/pope-conclave-cardinal-pietro-parolin.html",
-      "summary": "Cardinals have talked about Cardinal Pietro Parolin, the Vatican secretary of state, as someone who could have a steady, bureaucratic hand on the church\u2019s wheel.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "After Leading a Liberal Comeback, Carney Hits the Ground Running",
-      "url": "https://www.nytimes.com/2025/05/03/world/canada/carney-new-government.html",
-      "summary": "The prime minister will begin broad economic and security talks with President Trump next week and has set a timetable for his new government.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "These Contentious Issues Could Determine Who Becomes the Next Pope",
-      "url": "https://www.nytimes.com/2025/05/03/world/europe/pope-conclave-contentious-issues.html",
-      "summary": "As cardinals gather to elect Pope Francis\u2019 successor, they are facing debates over whether the church most needs change or constancy.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "As China Looks for Way Out of U.S. Trade Deadlock, Fentanyl Could Be Key",
-      "url": "https://www.nytimes.com/2025/05/03/world/asia/us-china-tariffs-fentanyl.html",
-      "summary": "Chinese officials have long used their willingness to cooperate to stem the flow of fentanyl to the United States as leverage in talks over broader disputes.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "Visual Analysis Shows U.S. Likely Bombed Yemen Migrant Detention Center",
-      "url": "https://www.nytimes.com/video/world/middleeast/100000010137049/us-bombing-yemen-migrant-shelter.html",
-      "summary": "Videos and photos reveal remnants of at least three U.S.-made GBU-39 bombs at the site of an April 28 attack. The strike killed 68 African migrants, according to the Houthis, a militant group that controls northern Yemen.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "The Frightening Precedents for Trump\u2019s \u2018Legal Abyss\u2019",
-      "url": "https://www.nytimes.com/2025/05/03/world/trump-dual-state.html",
-      "summary": "The \u2018dual-state theory\u2019 explains how authoritarians bend the law to their will.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "The Americans Who Left",
-      "url": "https://www.nytimes.com/2025/05/03/world/canada/vietnam-war-opponents-canada-america.html",
-      "summary": "Some of the United States\u2019 Vietnam War opponents found refuge in Canada. Fifty years after the end of the war, they\u2019re still worried about the future.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "Ghana Wanted a Cathedral. It Got an \u2018Expensive Hole\u2019 Instead.",
-      "url": "https://www.nytimes.com/2025/05/03/world/africa/ghana-cathedral-christian-corruption-hole.html",
-      "summary": "The nation had grand plans for a national cathedral designed by a celebrity architect. The $400 million project became a political battleground.",
-      "date": "May 3-5, 2025"
-    },
-    {
-      "headline": "Message From the Russian Military: \u2018We Lost Your Son\u2019",
-      "url": "https://www.nytimes.com/2025/05/03/world/europe/russia-missing-soldiers-ukraine-war.html",
-      "summary": "Russia lacks any formal, organized effort to account for legions of missing soldiers. That often leaves relatives in limbo, fending for themselves with scant government information.",
+      "headline": "European leaders prepare more sanctions on Russia if Ukraine ceasefire talks fail",
+      "url": "https://www.theguardian.com/world/2025/may/14/ukraine-war-briefing-europe-ready-with-sanctions-if-no-ceasefire-after-istanbul-talks",
+      "summary": "From The Guardian (May 14, 2025): European leaders signal readiness to impose further sanctions on Russia if upcoming talks in Turkey do not result in a ceasefire in Ukraine.",
       "date": "May 3-5, 2025"
     }
   ],
   "movies": [
     {
       "rank": 1,
-      "title": "Thunderbolts*",
-      "weekend_gross": "$74M",
-      "total_gross": "$74M",
-      "weeks_released": "1",
-      "summary": "After finding themselves ensnared in a death trap, an unconventional team of antiheroes must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.",
-      "stars": "Florence Pugh, Sebastian Stan, Julia Louis-Dreyfus"
+      "title": "Mission: Impossible \u2013 The Final Reckoning",
+      "weekend_gross": "N/A",
+      "total_gross": "N/A",
+      "weeks_released": "N/A",
+      "summary": "Release Date: May 2, 2025.",
+      "stars": "N/A"
     },
     {
       "rank": 2,
-      "title": "Sinners",
-      "weekend_gross": "$33M",
-      "total_gross": "$180M",
-      "weeks_released": "3",
-      "summary": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
-      "stars": "Miles Caton, Saul Williams, Andrene Ward-Hammond"
+      "title": "Thunderbolts*",
+      "weekend_gross": "N/A",
+      "total_gross": "N/A",
+      "weeks_released": "N/A",
+      "summary": "Release Date: May 2, 2025.",
+      "stars": "N/A"
     },
     {
       "rank": 3,
-      "title": "A Minecraft Movie",
-      "weekend_gross": "$14M",
-      "total_gross": "$398M",
-      "weeks_released": "5",
-      "summary": "Four misfits are suddenly pulled through a mysterious portal into a bizarre cubic wonderland that thrives on imagination. To get back home they'll have to master this world while embarking on a quest with an unexpected expert crafter.",
-      "stars": "Jason Momoa, Jack Black, Sebastian Hansen"
+      "title": "Final Destination: Bloodlines",
+      "weekend_gross": "N/A",
+      "total_gross": "N/A",
+      "weeks_released": "N/A",
+      "summary": "Release Date: May 16, 2025.",
+      "stars": "N/A"
     },
     {
       "rank": 4,
-      "title": "The Accountant 2",
-      "weekend_gross": "$9.5M",
-      "total_gross": "$41M",
-      "weeks_released": "2",
-      "summary": "Christian Wolff applies his brilliant mind and illegal methods to reconstruct the unsolved puzzle of a Treasury chief's murder.",
-      "stars": "Ben Affleck, Jon Bernthal, Cynthia Addai-Robinson"
+      "title": "Juliet & Romeo",
+      "weekend_gross": "N/A",
+      "total_gross": "N/A",
+      "weeks_released": "N/A",
+      "summary": "Release Date: May 2, 2025.",
+      "stars": "N/A"
     },
     {
       "rank": 5,
-      "title": "Until Dawn",
-      "weekend_gross": "$3.8M",
-      "total_gross": "$14M",
-      "weeks_released": "2",
-      "summary": "A group of friends trapped in a time loop, where mysterious foes are chasing and killing them in gruesome ways, must survive until dawn to escape it.",
-      "stars": "Ella Rubin, Michael Cimino, Ji-young Yoo, Odessa A\u2019zion"
+      "title": "Hurry Up Tomorrow",
+      "weekend_gross": "N/A",
+      "total_gross": "N/A",
+      "weeks_released": "N/A",
+      "summary": "Release Date: May 23, 2025.",
+      "stars": "N/A"
     },
     {
       "rank": 6,
-      "title": "The Amateur",
-      "weekend_gross": "$1.9M",
-      "total_gross": "$37M",
-      "weeks_released": "4",
-      "summary": "After his wife is killed in a London terrorist attack, a CIA cryptographer demands his bosses go after them. When it's clear they won't act due to conflicting internal priorities, he blackmails the agency into training him to let him go after them himself.",
-      "stars": "Rami Malek, Rachel Brosnahan, Caitriona Balfe, Laurence Fishburne"
+      "title": "Bring Her Back",
+      "weekend_gross": "N/A",
+      "total_gross": "N/A",
+      "weeks_released": "N/A",
+      "summary": "Release Date: May 30, 2025.",
+      "stars": "N/A"
     },
     {
       "rank": 7,
-      "title": "The King of Kings",
-      "weekend_gross": "$1.7M",
-      "total_gross": "$58M",
-      "weeks_released": "4",
-      "summary": "An animated family film inspired by the life of Jesus Christ.",
-      "stars": "Oscar Isaac, Forest Whitaker, Kenneth Branagh, Uma Thurman"
+      "title": "Clown in a Cornfield",
+      "weekend_gross": "N/A",
+      "total_gross": "N/A",
+      "weeks_released": "N/A",
+      "summary": "Release Date: May 9, 2025.",
+      "stars": "N/A"
     },
     {
       "rank": 8,
-      "title": "Warfare",
-      "weekend_gross": "$1.3M",
-      "total_gross": "$24M",
-      "weeks_released": "4",
-      "summary": "An A24 war film written and directed by Alex Garland and Ray Mendoza. Plot details are largely under wraps.",
-      "stars": "Charles Melton, Joseph Quinn, D'Pharaoh Woon-A-Tai, Will Poulter"
+      "title": "Shadow Force",
+      "weekend_gross": "N/A",
+      "total_gross": "N/A",
+      "weeks_released": "N/A",
+      "summary": "Release Date: May 16, 2025.",
+      "stars": "N/A"
     },
     {
       "rank": 9,
-      "title": "HIT: The 3rd Case",
-      "weekend_gross": "$955K",
-      "total_gross": "$955K",
-      "weeks_released": "1",
-      "summary": "A police officer in the Homicide Intervention Team (HIT) solves a challenging case.",
-      "stars": "Nani, Srinidhi Shetty"
+      "title": "Friendship",
+      "weekend_gross": "N/A",
+      "total_gross": "N/A",
+      "weeks_released": "N/A",
+      "summary": "Release Date: May 16, 2025.",
+      "stars": "N/A"
     },
     {
       "rank": 10,
-      "title": "The Surfer",
-      "weekend_gross": "$698K",
-      "total_gross": "$698K",
-      "weeks_released": "1",
-      "summary": "When a man returns to his idyllic hometown for a nostalgic surf, he is humiliated by a group of territorial locals and drawn into a conflict that pushes him to the edge.",
-      "stars": "Nicolas Cage, Julian McMahon, Nicholas Cassim"
+      "title": "Lilly",
+      "weekend_gross": "N/A",
+      "total_gross": "N/A",
+      "weeks_released": "N/A",
+      "summary": "Release Date: May 16, 2025.",
+      "stars": "N/A"
     }
   ],
-  "movie_source_info": "Weekend of May 2-4, 2025",
+  "movie_source_info": "Movie Insider, accessed May 14, 2025",
   "music": [
-    "Source: Billboard Hot 100 (https://www.billboard.com/charts/hot-100/)",
-    "**Top 20 Songs:**",
-    "1.  Luther - Kendrick Lamar & SZA",
-    "2.  Die With A Smile - Lady Gaga & Bruno Mars",
-    "3.  Ordinary - Alex Warren",
-    "4.  Nokia - Drake",
-    "5.  A Bar Song (Tipsy) - Shaboozey",
-    "6.  Pink Pony Club - Chappell Roan",
-    "7.  I'm The Problem - Morgan Wallen",
-    "8.  I Ain't Coming Back - Morgan Wallen & Post Malone",
-    "9.  Lose Control - Teddy Swims",
-    "10. Beautiful Things - Benson Boone",
-    "11. All The Way - BigXthaPlug Featuring Bailey Zimmerman",
-    "12. Anxiety - Doechii",
-    "13. Birds Of A Feather - Billie Eilish",
-    "14. Just In Case - Morgan Wallen",
-    "15. I Had Some Help - Post Malone Featuring Morgan Wallen",
-    "16. APT. - ROSE & Bruno Mars",
-    "17. Love Somebody - Morgan Wallen",
-    "18. Mutt - Leon Thomas",
-    "19. Espresso - Sabrina Carpenter",
-    "20. That's So True - Gracie Abrams",
-    "*(Note: List continues on the source page)*"
+    "Eric Church - Evangeline vs. The Machine (Released: May 2, 2025)",
+    "Fuerza Regida - 111XPANTIA (Released: May 2, 2025)",
+    "Selena Gomez and Benny Blanco - I Said I Love You First\u2026 And You Said It Back (Released: May 2, 2025)",
+    "Arcade Fire - Pink Elephant (Released: May 9, 2025)",
+    "Blake Shelton - For Recreational Use Only (Released: May 9, 2025)",
+    "Little Simz - Lotus (Released: May 9, 2025)",
+    "Maren Morris - Dreamsicle (Released: May 9, 2025)",
+    "PinkPantheress - Fancy That (Released: May 9, 2025)",
+    "BOYNEXTDOOR - No Genre (Released: May 13, 2025)",
+    "Avicii - Avicii Forever (Expected: May 16, 2025)",
+    "Damiano David - Funny Little Fears (Expected: May 16, 2025)",
+    "Jin - Echo (Expected: May 16, 2025)",
+    "Morgan Wallen - I\u2019m the Problem (Expected: May 16, 2025)",
+    "Sofi Tukker - Butter (Expected: May 16, 2025)",
+    "(Source: https://www.billboard.com/lists/new-albums-2025-calendar-new-music-releases-this-year/, accessed May 14, 2025)"
   ],
   "sports": [
-    "Source: ESPN Latest News (http://www.espn.com/espn/latestnews)",
-    "**NFL:**",
-    "*   Washington D.C. named host city for the 2027 NFL Draft. (May 5)",
-    "*   Former Patriots WR Julian Edelman voted into the team's Hall of Fame by fans. (May 5)",
-    "*   Cleveland Browns LB Devin Bush arrested and charged with assault. (May 5)",
-    "*   Buffalo Bills reportedly adding free agent WR Elijah Moore. (May 5)",
-    "*   Green Bay Packers picked up the 5th-year option for DL Devonte Wyatt, declined option for LB Quay Walker. (May 5)",
-    "*   The 2025 NFL Draft took place from April 25-27, with QB Cam Ward selected first overall by the Indianapolis Colts.",
-    "*   Former agent and business partner of John Elway, Gary Zimmerman, died after a fall. (May 3)",
-    "**NBA:**",
-    "*   The second round of the 2025 NBA Playoffs is underway. Key matchups include Celtics vs. Knicks and Thunder vs. Nuggets. (May 5)",
-    "*   Utah Jazz and Head Coach Will Hardy agreed to a contract extension. (May 5)",
-    "*   Tyrese Haliburton led the Indiana Pacers to a Game 1 victory over the Cleveland Cavaliers in the Eastern Conference Semifinals. (May 4)",
-    "*   The Golden State Warriors defeated the Houston Rockets in Game 7 of their first-round series. (May 5)",
-    "*   The Denver Nuggets defeated the Los Angeles Clippers in Game 7 of their first-round series, setting up a matchup with the Oklahoma City Thunder. (May 3)",
-    "*   Gregg Popovich announced his retirement as head coach of the San Antonio Spurs; Mitch Johnson named successor. (May 3)",
-    "**MLB:**",
-    "*   Arizona Diamondbacks unveiled new City Connect uniforms. (May 5)",
-    "*   Kansas City Royals set a club record by hitting seven home runs in a game against the Baltimore Orioles. Maikel Garcia hit two. (May 4)",
-    "*   Boston Red Sox 1B Triston Casas confirmed out for the season after knee surgery. (May 5)",
-    "*   Shohei Ohtani and Freddie Freeman homered as the Los Angeles Dodgers defeated the Atlanta Braves. Roki Sasaki earned his first MLB win. (May 5)",
-    "*   Chicago Cubs rookie Pete Crow-Armstrong homered for the third time in two games. (May 3)",
-    "*   Los Angeles Angels star Mike Trout placed on the Injured List with a bone bruise. (May 2)",
-    "*   Cincinnati Reds pitcher Hunter Greene struck out 12 batters against the Washington Nationals. (May 2)",
-    "*   San Diego Padres star Fernando Tatis Jr. left a game after being hit by a pitch; X-rays were negative. (May 2)"
+    "Dak Prescott is excited about the Cowboys pairing George Pickens with CeeDee Lamb.",
+    "The 2025 NFL schedule is being released, with the Cowboys hosting the Chiefs on Thanksgiving.",
+    "Ravens' Ar'Darius Washington reportedly suffered a torn Achilles.",
+    "Trey Hendrickson stated he won't play for the Bengals without a new contract.",
+    "The Eagles are set to visit the Packers for a 'Monday Night Football' game on November 10th.",
+    "The Missouri House backed new incentives to try to keep the Chiefs and Royals in the state.",
+    "The Vikings will have back-to-back international games.",
+    "YouTube will stream the Week 1 NFL Brazil game for free.",
+    "Chris Berman signed an extension through his 50th anniversary at ESPN.",
+    "(Source: http://www.espn.com/espn/latestnews, accessed May 14, 2025)"
   ],
   "hockey_news": [
     "Source: ESPN (https://www.espn.com/nhl/story/_/id/44698221/nhl-playoffs-2025-stanley-cup-bracket-schedule-teams-players-preview)",
@@ -346,56 +227,15 @@
     "*   **Link:** https://newsroom.2k.com/news/pga-tourr-2k25-season-2-celebrates-the-major-championships-and-introduces-the-old-course-at-st-andrews-links"
   ],
   "tv_shows": [
-    "Source: IndieWire (https://www.indiewire.com/gallery/new-tv-shows-may-2025-preview/)",
-    "**1. The Four Seasons**",
-    "*   **Platform:** Netflix",
-    "*   **Release Date:** May 1, 2025",
-    "*   **Summary:** Based on Alan Alda\u2019s 1981 film, this series follows three couples whose dynamic is threatened when they learn that two of them might break up. Over the course of a year they take four vacations while recovering from the jarring news.",
-    "*   **Stars:** Tina Fey, Will Forte, Steve Carell, Kerri Kenney-Silver, Colman Domingo, Marco Calvani",
-    "**2. Forever**",
-    "*   **Platform:** Netflix",
-    "*   **Release Date:** May 8, 2025",
-    "*   **Summary:** Adapted from Judy Blume\u2019s 1975 novel, this series updates the setting to 2018 Los Angeles and follows two Black elementary school classmates who reconnect as high school juniors. It explores their relationship and the complexities of teen emotions in the internet age.",
-    "*   **Stars:** Michael Cooper Jr., Lovie Simone",
-    "**3. Duster**",
-    "*   **Platform:** Max",
-    "*   **Release Date:** May 15, 2025",
-    "*   **Summary:** From J.J. Abrams and LaToya Morgan, this series follows a getaway driver working for a crime family in the 1970s. With the family under scrutiny from federal agents, he must decide where his loyalties lie.",
-    "*   **Stars:** Josh Holloway, Rachel Hilson, Keith David, Sydney Elisabeth, Greg Grunberg",
-    "**4. Overcompensating**",
-    "*   **Platform:** Prime Video",
-    "*   **Release Date:** May 15, 2025",
-    "*   **Summary:** A closeted high school valedictorian arrives at college at a crossroads. He finds a kindred spirit, and together they explore college\u2019s myriad opportunities and embarrassments.",
-    "*   **Stars:** Benito Skinner, Wally Baram, Mary Beth Barone, Adam DiMarco, Rish Shah, Connie Britton, Kyle MacLachlan",
-    "**5. Murderbot**",
-    "*   **Platform:** Apple TV+",
-    "*   **Release Date:** May 16, 2025",
-    "*   **Summary:** An adaptation of Martha Wells\u2019 \u201cThe Murderbot Diaries,\u201d this sci-fi series is about a security robot that overrides its protocols while continuing to work among humans, hiding its sentience.",
-    "*   **Stars:** Alexander Skarsg\u00e5rd, Noma Dumezweni, David Dastmalchian, Sabrina Wu, Akshay Khanna",
-    "**6. Motorheads**",
-    "*   **Platform:** Prime Video",
-    "*   **Release Date:** May 20, 2025",
-    "*   **Summary:** Two Brooklyn teens move to their mom\u2019s hometown in Pennsylvania. Living with their uncle, they navigate a new town, a new high school, and questions about their missing father, all set against a backdrop of old cars and tense races.",
-    "*   **Stars:** Melissa Collazo, Michael Cimino, Nathalie Kelley, Ryan Phillippe, Mia Healey",
-    "**7. Sirens**",
-    "*   **Platform:** Netflix",
-    "*   **Release Date:** May 22, 2025",
-    "*   **Summary:** A darkly comic limited series about a wealthy socialite whose hold on her young prot\u00e9g\u00e9 proves too much for her protective sister. It explores themes of modern role models, class disparity, and the influence of the wealthy.",
-    "*   **Stars:** Julianne Moore, Meghann Fahy, Milly Alcock, Kevin Bacon",
-    "**8. Tyler Perry\u2019s She the People**",
-    "*   **Platform:** Netflix",
-    "*   **Release Date:** May 22, 2025",
-    "*   **Summary:** Explores what happens after a Black woman wins an election, focusing on the challenges and realities of her new position of power.",
-    "*   **Stars:** (Not specified in the article snippet provided, will need to find this elsewhere if critical)",
-    "**9. Adults**",
-    "*   **Platform:** FX",
-    "*   **Release Date:** (Not specified in the article snippet, assumed May 2025)",
-    "*   **Summary:** About a group of 20-somethings living together in one of their parents\u2019 houses, navigating adulthood.",
-    "*   **Stars:** (Not specified in the article snippet provided)",
-    "**10. The Better Sister**",
-    "*   **Platform:** (Not specified in the article snippet, assumed May 2025)",
-    "*   **Release Date:** (Not specified in the article snippet, assumed May 2025)",
-    "*   **Summary:** A story involving sibling tension and a violent murder.",
-    "*   **Stars:** (Not specified in the article snippet provided)"
+    "Forever (Premiered: May 8, Netflix) - Adaptation of Judy Blume's book, two young athletes experience first love.",
+    "Poker Face (Season 2) (Premiered: May 8, Peacock) - Natasha Lyonne returns as Charlie Cale, solving new mysteries.",
+    "Duster (Premieres: May 15, Max) - J.J. Abrams-produced series set in 1972, starring Josh Holloway.",
+    "Murderbot (Premieres: May 16, Apple TV+) - Based on Martha Wells' sci-fi comedy books, starring Alexander Skarsg\u00e5rd.",
+    "Motorheads (Premieres: May 20, Amazon Prime Video) - YA drama about teenage love and street racing, starring Ryan Phillippe.",
+    "Nine Perfect Strangers (Season 2) (Premieres: May 21, Hulu) - Nicole Kidman returns as wellness guru Masha.",
+    "Sirens (Premieres: May 22, Netflix) - Dark comedy about wealthy socialites with sinister motives.",
+    "And Just Like That... (Season 3) (Premieres: May 29, Max) - The Sex and the City sequel series continues.",
+    "The Better Sister (Premieres: May 29, Prime Video) - Starring Jessica Biel and Elizabeth Banks as sisters uncovering secrets.",
+    "(Source: https://www.tvguide.com/news/ultimate-guide-what-to-watch-netflix-hulu-prime-video-max-more-may-2025/, accessed May 14, 2025)"
   ]
 }

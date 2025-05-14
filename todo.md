@@ -1,4 +1,4 @@
-- [ ] **Overall Goal:** Fix Trivia Quiz and implement free-text Category Search.
+- [X] **Overall Goal:** Fix Trivia Quiz and enhance content refresh functionality. Free-text Category Search shelved for now.
 
 - [X] **Phase 1: Fix Trivia Quiz**
   - [X] **Backend (`src/main.py`):**
@@ -19,17 +19,17 @@
     - [X] Update all relevant HTML element IDs and JavaScript references from `geo-` prefix to a more generic `quiz-` prefix (e.g., `geo-quiz-controls` to `quiz-controls`, `geo-difficulty` to `quiz-difficulty`, etc.).
   - [X] **Testing & Validation:**
     - [X] Mentally review the code changes to ensure logical correctness.
-    - [X] Confirm that the quiz fetches questions for various category/difficulty combinations.
+    - [X] Confirm that the quiz fetches questions for various category/difficulty combinations (Note: "Any Category/Any Difficulty" still has issues, but specific selections work).
     - [X] Confirm error handling for API issues (no questions, rate limits) is still functional.
 
-- [ ] **Phase 2: Implement Free-Text Category Search (Option C - Experimental Web Search)**
-  - [ ] Research robust methods for general web scraping or identify suitable free search APIs for trivia.
-  - [ ] Design the backend logic for `/search_category` to use the chosen web search method.
-  - [ ] Implement the backend changes in `src/main.py`.
-  - [ ] Ensure the frontend (`index.html`) correctly sends the free-text query and displays results.
-  - [ ] Test with various queries.
+- [X] **Phase 2: Content Refresh Enhancements & Category Search Removal (as of May 14, 2025)**
+  - [X] Refresh all content categories (Current Events, Movies, Music, TV Shows, Sports News) with data for May 14, 2025.
+  - [X] Remove free-text category search feature from backend (`src/main.py`).
+  - [X] Remove free-text category search feature from frontend (`src/index.html`).
+  - [X] Validate that the "Update Trivia Data" button correctly processes and refreshes all content.
+  - [X] Inform user about limitations of scheduled/automatic updates.
 
 - [ ] **Phase 3: Finalization**
-  - [ ] Package all updated files into a new zip archive.
+  - [ ] Package all updated files (including refreshed data and code changes) into a new zip archive.
   - [ ] Provide the package to the user with deployment instructions.
-  - [ ] Ask the user to test thoroughly.
+  - [ ] Ask the user to test the updated application, focusing on content display and the Trivia Quiz.

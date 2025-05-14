@@ -1,74 +1,34 @@
-# Top Movies (Weekend of May 2-4, 2025)
+# Top Movies - May 2025 (Movie Insider, accessed May 14, 2025)
 
-Source: IMDb Top Box Office (US) (https://www.imdb.com/chart/boxoffice/)
+**1. Mission: Impossible – The Final Reckoning**
+*   **Summary:** Release Date: May 2, 2025.
 
-**1. Thunderbolts***
-*   **Weekend Gross:** $74M
-*   **Total Gross:** $74M
-*   **Weeks Released:** 1
-*   **Summary:** After finding themselves ensnared in a death trap, an unconventional team of antiheroes must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.
-*   **Stars:** Florence Pugh, Sebastian Stan, Julia Louis-Dreyfus
+**2. Thunderbolts***
+*   **Summary:** Release Date: May 2, 2025.
 
-**2. Sinners**
-*   **Weekend Gross:** $33M
-*   **Total Gross:** $180M
-*   **Weeks Released:** 3
-*   **Summary:** Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.
-*   **Stars:** Miles Caton, Saul Williams, Andrene Ward-Hammond
+**3. Final Destination: Bloodlines**
+*   **Summary:** Release Date: May 16, 2025.
 
-**3. A Minecraft Movie**
-*   **Weekend Gross:** $14M
-*   **Total Gross:** $398M
-*   **Weeks Released:** 5
-*   **Summary:** Four misfits are suddenly pulled through a mysterious portal into a bizarre cubic wonderland that thrives on imagination. To get back home they'll have to master this world while embarking on a quest with an unexpected expert crafter.
-*   **Stars:** Jason Momoa, Jack Black, Sebastian Hansen
+**4. Juliet & Romeo**
+*   **Summary:** Release Date: May 2, 2025.
 
-**4. The Accountant 2**
-*   **Weekend Gross:** $9.5M
-*   **Total Gross:** $41M
-*   **Weeks Released:** 2
-*   **Summary:** Christian Wolff applies his brilliant mind and illegal methods to reconstruct the unsolved puzzle of a Treasury chief's murder.
-*   **Stars:** Ben Affleck, Jon Bernthal, Cynthia Addai-Robinson
+**5. Hurry Up Tomorrow**
+*   **Summary:** Release Date: May 23, 2025.
 
-**5. Until Dawn**
-*   **Weekend Gross:** $3.8M
-*   **Total Gross:** $14M
-*   **Weeks Released:** 2
-*   **Summary:** A group of friends trapped in a time loop, where mysterious foes are chasing and killing them in gruesome ways, must survive until dawn to escape it.
-*   **Stars:** Ella Rubin, Michael Cimino, Ji-young Yoo, Odessa A’zion
+**6. Bring Her Back**
+*   **Summary:** Release Date: May 30, 2025.
 
-**6. The Amateur**
-*   **Weekend Gross:** $1.9M
-*   **Total Gross:** $37M
-*   **Weeks Released:** 4
-*   **Summary:** After his wife is killed in a London terrorist attack, a CIA cryptographer demands his bosses go after them. When it's clear they won't act due to conflicting internal priorities, he blackmails the agency into training him to let him go after them himself.
-*   **Stars:** Rami Malek, Rachel Brosnahan, Caitriona Balfe, Laurence Fishburne
+**7. Clown in a Cornfield**
+*   **Summary:** Release Date: May 9, 2025.
 
-**7. The King of Kings**
-*   **Weekend Gross:** $1.7M
-*   **Total Gross:** $58M
-*   **Weeks Released:** 4
-*   **Summary:** An animated family film inspired by the life of Jesus Christ.
-*   **Stars:** Oscar Isaac, Forest Whitaker, Kenneth Branagh, Uma Thurman
+**8. Shadow Force**
+*   **Summary:** Release Date: May 16, 2025.
 
-**8. Warfare**
-*   **Weekend Gross:** $1.3M
-*   **Total Gross:** $24M
-*   **Weeks Released:** 4
-*   **Summary:** An A24 war film written and directed by Alex Garland and Ray Mendoza. Plot details are largely under wraps.
-*   **Stars:** Charles Melton, Joseph Quinn, D'Pharaoh Woon-A-Tai, Will Poulter
+**9. Friendship**
+*   **Summary:** Release Date: May 16, 2025.
 
-**9. HIT: The 3rd Case**
-*   **Weekend Gross:** $955K
-*   **Total Gross:** $955K
-*   **Weeks Released:** 1
-*   **Summary:** A police officer in the Homicide Intervention Team (HIT) solves a challenging case.
-*   **Stars:** Nani, Srinidhi Shetty
+**10. Lilly**
+*   **Summary:** Release Date: May 16, 2025.
 
-**10. The Surfer**
-*   **Weekend Gross:** $698K
-*   **Total Gross:** $698K
-*   **Weeks Released:** 1
-*   **Summary:** When a man returns to his idyllic hometown for a nostalgic surf, he is humiliated by a group of territorial locals and drawn into a conflict that pushes him to the edge.
-*   **Stars:** Nicolas Cage, Julian McMahon, Nicholas Cassim
+Source: https://www.movieinsider.com/movies/may/2025
 
